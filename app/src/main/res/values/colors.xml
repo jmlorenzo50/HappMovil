@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="colorPanelControl">#f1d401</color>
+    <color name="colorActosBondad">#91c245</color>
+
+    <color name="colorTitulo">#656565</color>
+
+</resources>

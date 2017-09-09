@@ -1,0 +1,192 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    tools:showIn="@layout/actos_bondad_bar">
+
+<LinearLayout
+    android:id="@+id/instrucciones"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    >
+
+    <!-- Contenido -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp">
+
+
+        <!-- Cita de Eduardo Galeno -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="fonts/Roboto-ThinItalic.ttf"
+            android:text="@string/actos_bondad_cita_01"
+            android:textAlignment="center"
+            android:textColor="#91c245"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ffffff"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#91c245"
+                android:orientation="horizontal"
+                android:layout_weight="5000"
+                android:layout_gravity="center"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="fonts/Neon.ttf"
+                android:text="@string/eduardo_galeano"
+                android:textAlignment="textEnd"
+                android:textColor="#696969"
+                android:textSize="12dp"
+                android:textStyle="italic"
+                android:layout_weight="0.1"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                />
+
+        </LinearLayout>
+
+
+        <!-- Textos -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/actos_bondad_cita_02"
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/actos_bondad_cita_03"
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp" />
+
+
+        <!-- Instrucciones -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#ffffff"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/icono_verde"
+                android:layout_margin="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="@string/instrucciones"
+                android:textAlignment="center"
+                android:textColor="#696969"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#91c245"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            />
+
+
+        <!--Citas de las instrucciones -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/actos_bondad_cita_04"
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/actos_bondad_cita_05"
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp" />
+
+
+        <!-- Botón -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/empezar_ahora"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/boton_largo_verde"
+            android:onClick="irActosBondadMenu"/>
+
+
+
+        <!-- Checkbox -->
+        <CheckBox
+            android:id="@+id/chkNoMostrarTexto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/no_mostrar_texto"
+            android:textColor="#696969"
+            android:textSize="12dp"
+            android:layout_gravity="center"
+            android:buttonTint="#696969"
+            />
+
+
+    </LinearLayout>
+</LinearLayout>
+
+</FrameLayout>
