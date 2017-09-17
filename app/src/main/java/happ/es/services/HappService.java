@@ -9,6 +9,7 @@ import java.net.URL;
 
 import happ.es.model.ResponseModel;
 import happ.es.types.Gender;
+import happ.es.types.MaritalStatus;
 import happ.es.types.TypeResponse;
 import happ.es.wrapper.HappResponseWrapper;
 
@@ -26,10 +27,10 @@ public class HappService {
     }
 
 
-    public ResponseModel actualizarDispositivo(String id, int age, Gender gender) {
+    public ResponseModel actualizarDispositivo(String id, int age, Gender gender, MaritalStatus maritalStatus, String codeEducationLevel) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
-            model = new HappResponseWrapper().toModel(update(id, age, gender));
+            model = new HappResponseWrapper().toModel(update(id, age, gender, maritalStatus, codeEducationLevel));
         }
         return model;
     }
@@ -49,9 +50,13 @@ public class HappService {
     }
 
 
-    private String update (String id, int age, Gender gender) {
+    private String update (String id, int age, Gender gender, MaritalStatus maritalStatus, String codeEducationLevel) {
         StringBuffer salida = new StringBuffer();
-        String peticion = URL_BASE + "/happ/device/update?id=" + id + "&age=" + age + "&gender=" + gender.name();
+        String peticion = URL_BASE + "/happ/device/update?id=" + id
+                                   + "&age=" + age
+                                   + "&gender=" + gender.name()
+                                   + "&maritalstatus=" + maritalStatus.name()
+                                   + "&codeEducationLevel=" + codeEducationLevel;
         return hacerPeticion(peticion);
     }
 

@@ -5,22 +5,30 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import happ.es.model.ResponseModel;
 import happ.es.services.HappService;
 import happ.es.types.Gender;
+import happ.es.types.MaritalStatus;
 import happ.es.types.TypeResponse;
 
 public class DeviceActivity extends AppCompatActivity {
 
     private HappService happService;
 
-    private ImageView btnMan;
+    private ImageView btnMan, btnWoman;
 
-    private ImageView btnWoman;
+    private ImageView btnState1, btnState2, btnState3, btnState4;
 
     private boolean selectedMan;
+
+    private MaritalStatus maritalStatus;
+
+    private EditText txtAge;
+
+    private Integer age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +40,36 @@ public class DeviceActivity extends AppCompatActivity {
         selectedMan = true;
         btnMan = (ImageView) findViewById(R.id.btnMan);
         btnWoman = (ImageView) findViewById(R.id.btnWoman);
+
+        maritalStatus = MaritalStatus.SINGLE;
+        btnState1= (ImageView) findViewById(R.id.btnState1);
+        btnState2= (ImageView) findViewById(R.id.btnState2);
+        btnState3= (ImageView) findViewById(R.id.btnState3);
+        btnState4= (ImageView) findViewById(R.id.btnState4);
+
+
     }
 
 
     public void continuar(View view) {
         String id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-        ResponseModel response = happService.actualizarDispositivo(id, -1, selectedMan? Gender.MAN: Gender.WOMAN);
 
+        String codeEducationLevel = "SIN";
+
+        txtAge = (EditText)findViewById(R.id.age);
+
+        if (txtAge.getText().toString() != null && txtAge.getText().toString().trim().length() > 0) {
+            age = Integer.parseInt(txtAge.getText().toString().trim());
+            if (age < 20) {
+                age = 20;
+            } else if (age > 100) {
+                age = 100;
+            }
+        } else {
+            age = -1;
+        }
+
+        ResponseModel response = happService.actualizarDispositivo(id, age, selectedMan? Gender.MAN: Gender.WOMAN, maritalStatus, codeEducationLevel);
         if (response.getTypeResponse() == TypeResponse.OK) {
             Intent intent = new Intent(this, PanelControlActivity.class);
             finish();
@@ -63,4 +94,40 @@ public class DeviceActivity extends AppCompatActivity {
         }
     }
 
+
+    public void selectedState1(View view) {
+        btnState1.setImageResource(R.drawable.estado_civil_1_on);
+        btnState2.setImageResource(R.drawable.estado_civil_2_off);
+        btnState3.setImageResource(R.drawable.estado_civil_3_off);
+        btnState4.setImageResource(R.drawable.estado_civil_4_off);
+
+        maritalStatus = MaritalStatus.SINGLE;
+    }
+
+    public void selectedState2(View view) {
+        btnState1.setImageResource(R.drawable.estado_civil_1_off);
+        btnState2.setImageResource(R.drawable.estado_civil_2_on);
+        btnState3.setImageResource(R.drawable.estado_civil_3_off);
+        btnState4.setImageResource(R.drawable.estado_civil_4_off);
+
+        maritalStatus = MaritalStatus.MARRIED;
+    }
+
+    public void selectedState3(View view) {
+        btnState1.setImageResource(R.drawable.estado_civil_1_off);
+        btnState2.setImageResource(R.drawable.estado_civil_2_off);
+        btnState3.setImageResource(R.drawable.estado_civil_3_on);
+        btnState4.setImageResource(R.drawable.estado_civil_4_off);
+
+        maritalStatus = MaritalStatus.DIVORCED;
+    }
+
+    public void selectedState4(View view) {
+        btnState1.setImageResource(R.drawable.estado_civil_1_off);
+        btnState2.setImageResource(R.drawable.estado_civil_2_off);
+        btnState3.setImageResource(R.drawable.estado_civil_3_off);
+        btnState4.setImageResource(R.drawable.estado_civil_4_on);
+
+        maritalStatus = MaritalStatus.WIDOWED;
+    }
 }
