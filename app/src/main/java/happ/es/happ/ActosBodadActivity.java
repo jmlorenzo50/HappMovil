@@ -125,4 +125,10 @@ public class ActosBodadActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void irConfiguracion() {
+        Intent intent = new Intent(this, DeviceActivity.class);
+        startActivity(intent);
+    }
+
 }

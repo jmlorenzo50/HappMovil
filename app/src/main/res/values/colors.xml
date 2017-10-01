@@ -10,4 +10,6 @@
 
     <color name="colorTitulo">#656565</color>
 
+    <color name="colorFondoCuestionario">#CDCDCD</color>
+
 </resources>

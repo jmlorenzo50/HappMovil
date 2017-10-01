@@ -18,6 +18,7 @@ import happ.es.model.ResponseModel;
 import happ.es.services.HappService;
 import happ.es.types.Gender;
 import happ.es.types.MaritalStatus;
+import happ.es.types.ParamIntent;
 import happ.es.types.TypeResponse;
 
 public class DeviceActivity extends AppCompatActivity {
@@ -62,15 +63,12 @@ public class DeviceActivity extends AppCompatActivity {
         // Inicialización de las variables lógicas
         id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         happService = new HappService();
+        validarExistenDatos();
 
         // Obtención del os niveles educativos para la recarga del combo
         ResponseModel response = happService.getAllEducationLevels(id);
         List<EducationLevelModel> elvs = response.getEducationLevels();
-        /*ArrayList<String> list = new ArrayList<String>();
-        for (int i = 0; i < elvs.size(); i++) {
-            EducationLevelModel elv = elvs.get(i);
-            list.add(elv.getValue());
-        }*/
+
         ArrayAdapter<EducationLevelModel> adapter = new ArrayAdapter<EducationLevelModel>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, elvs);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -79,8 +77,22 @@ public class DeviceActivity extends AppCompatActivity {
     }
 
 
+    public void validarExistenDatos() {
+        Bundle extras = this.getIntent().getExtras();
+        if (extras.getBoolean(ParamIntent.VALIDAR_EXISTEN_DATOS.name())) {
+            ResponseModel device = happService.conectar(id);
+
+            if (device.getDeviceModel().getAge() > 0) {
+                Intent intent = new Intent(this, PanelControlActivity.class);
+                finish();
+                startActivity(intent);
+            }
+        }
+
+    }
+
+
     public void continuar(View view) {
-        String codeEducationLevel = "SIN";
 
         txtAge = (EditText)findViewById(R.id.age);
 
@@ -95,7 +107,9 @@ public class DeviceActivity extends AppCompatActivity {
             age = -1;
         }
 
-        ResponseModel response = happService.actualizarDispositivo(id, age, selectedMan? Gender.MAN: Gender.WOMAN, maritalStatus, codeEducationLevel);
+        EducationLevelModel educationLevelModel = (EducationLevelModel)cmbEducationLevel.getSelectedItem();
+
+        ResponseModel response = happService.actualizarDispositivo(id, age, selectedMan? Gender.MAN: Gender.WOMAN, maritalStatus, educationLevelModel.getCode());
         if (response.getTypeResponse() == TypeResponse.OK) {
             Intent intent = new Intent(this, PanelControlActivity.class);
             finish();

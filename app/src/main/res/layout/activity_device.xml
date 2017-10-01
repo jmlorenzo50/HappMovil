@@ -17,11 +17,21 @@
         tools:layout_editor_absoluteX="8dp">
 
         <!-- Sexo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="@string/sexo"
+            android:textColor="@color/colorTitulo"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="150dp"
             android:orientation="horizontal"
-            android:layout_weight="1"
             android:background="#FFFFFF"
             >
 
@@ -33,6 +43,7 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:onClick="selectedMan"
+                android:layout_marginLeft="30dp"
                 app:srcCompat="@drawable/happ_man_on" />
 
 
@@ -43,118 +54,195 @@
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:onClick="selectedWoman"
+                android:layout_marginRight="30dp"
                 app:srcCompat="@drawable/happ_woman_off" />
 
 
         </LinearLayout>
 
         <!-- Edad -->
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="@string/edad"
+            android:textColor="@color/colorTitulo"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+        />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:orientation="horizontal"
             android:background="#FFFFFF">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/edad"
-                android:textColor="@color/colorTitulo"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/years" />
 
             <EditText
                 android:id="@+id/age"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="10"
                 android:inputType="number"
                 android:textColor="@color/colorTitulo"
-                android:background="@color/colorPanelControl"
+                android:textAlignment="center"
+                android:background="@color/colorFondoCuestionario"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="20dp"
-                android:layout_weight="5"/>
+                android:maxLength="2"
+                />
 
         </LinearLayout>
 
         <!-- Estado civil-->
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1"
+            android:layout_height="30dp"
+            android:text="@string/estadoCivil"
+            android:textColor="@color/colorTitulo"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            />
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:background="#FFFFFF"
             >
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/btnState1"
+                    android:layout_weight="1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:onClick="selectedState1"
+                    app:srcCompat="@drawable/estado_civil_1_on" />
 
 
-            <ImageView
-                android:id="@+id/btnState1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_margin="3px"
-                android:onClick="selectedState1"
-                app:srcCompat="@drawable/estado_civil_1_on" />
+                <ImageView
+                    android:id="@+id/btnState2"
+                    android:layout_weight="1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:onClick="selectedState2"
+                    app:srcCompat="@drawable/estado_civil_2_off" />
 
+                <ImageView
+                    android:id="@+id/btnState3"
+                    android:layout_weight="1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:onClick="selectedState3"
+                    app:srcCompat="@drawable/estado_civil_3_off" />
 
-            <ImageView
-                android:id="@+id/btnState2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_margin="3px"
-                android:onClick="selectedState2"
-                app:srcCompat="@drawable/estado_civil_2_off" />
+                <ImageView
+                    android:id="@+id/btnState4"
+                    android:layout_weight="1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:onClick="selectedState4"
+                    app:srcCompat="@drawable/estado_civil_4_off" />
+            </TableRow>
 
-            <ImageView
-                android:id="@+id/btnState3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_margin="3px"
-                android:onClick="selectedState3"
-                app:srcCompat="@drawable/estado_civil_3_off" />
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/soltero"
+                    android:textColor="@color/colorTitulo"
+                    />
 
-            <ImageView
-                android:id="@+id/btnState4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_margin="3px"
-                android:onClick="selectedState4"
-                app:srcCompat="@drawable/estado_civil_4_off" />
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/casado"
+                    android:textColor="@color/colorTitulo"
+                    />
 
-        </LinearLayout>
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/divorciado"
+                    android:textColor="@color/colorTitulo"
+                    />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/viudo"
+                    android:textColor="@color/colorTitulo"
+                    />
+
+            </TableRow>
+        </TableLayout>
+
 
 
         <!-- Nivel educativo -->
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="@string/nivelEstudios"
+            android:textColor="@color/colorTitulo"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:orientation="horizontal"
             android:background="#FFFFFF">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nivelEducativo"
-                android:textColor="@color/colorTitulo"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/study" />
+
 
             <Spinner
                 android:id="@+id/educationLevel"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/btn_dropdown"
                 android:textColor="@color/colorTitulo"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="20dp"
                 android:spinnerMode="dropdown"
-                android:layout_weight="4" />
+                android:layout_weight="10" />
 
         </LinearLayout>
 
@@ -174,7 +262,7 @@
             android:textSize="18dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/boton_largo_amarillo"
+            android:background="@drawable/boton_largo_verde"
             android:onClick="continuar"/>
 
     </LinearLayout>

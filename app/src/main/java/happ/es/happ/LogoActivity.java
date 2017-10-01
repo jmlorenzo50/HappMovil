@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import happ.es.model.ResponseModel;
 import happ.es.services.HappService;
+import happ.es.types.ParamIntent;
 import happ.es.types.TypeResponse;
 import happ.es.util.ConstantesActosBondad;
 import happ.es.wrapper.HappResponseWrapper;
@@ -113,6 +114,7 @@ public class LogoActivity extends AppCompatActivity {
 
     public void continuar(View view) {
             Intent intent = new Intent(this, DeviceActivity.class);
+            intent.putExtra(ParamIntent.VALIDAR_EXISTEN_DATOS.name(), true);
             finish();
             startActivity(intent);
     }

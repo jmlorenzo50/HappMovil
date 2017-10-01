@@ -12,7 +12,11 @@ public class DeviceModel {
 	
 	/** The gender. */
 	private Gender gender;
-	
+
+	/** The age */
+	private Integer age;
+
+
 	/**
 	 * Instantiates a new device model.
 	 */
@@ -67,6 +71,23 @@ public class DeviceModel {
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
-	
+
+
+	/**
+	 * Get the age
+	 * @return
+	 */
+	public Integer getAge() {
+		return age;
+	}
+
+	/**
+	 * Set the age
+	 * @param age
+	 */
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
 
 }

@@ -32,8 +32,9 @@ public class HappResponseWrapper {
             DeviceModel device = new DeviceModel();
             if (exist(reader, "deviceModel")) {
                 JSONObject deviceModel = reader.getJSONObject("deviceModel");
-                //device.setAndroidId(reader.getString(""));
-                //device.setGender(Gender.valueOf(reader.getString("")));
+                device.setAndroidId(deviceModel.getString("androidId"));
+                device.setGender(Gender.valueOf(deviceModel.getString("gender")));
+                device.setAge(deviceModel.getInt("age"));
                 model.setDeviceModel(device);
             }
 
