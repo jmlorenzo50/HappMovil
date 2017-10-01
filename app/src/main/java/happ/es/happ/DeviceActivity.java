@@ -5,9 +5,15 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import happ.es.model.EducationLevelModel;
 import happ.es.model.ResponseModel;
 import happ.es.services.HappService;
 import happ.es.types.Gender;
@@ -22,6 +28,8 @@ public class DeviceActivity extends AppCompatActivity {
 
     private ImageView btnState1, btnState2, btnState3, btnState4;
 
+    private Spinner cmbEducationLevel;
+
     private boolean selectedMan;
 
     private MaritalStatus maritalStatus;
@@ -30,13 +38,14 @@ public class DeviceActivity extends AppCompatActivity {
 
     private Integer age;
 
+    private String id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_device);
 
-        happService = new HappService();
-
+        // Inicialización de los componentes gráficos
         selectedMan = true;
         btnMan = (ImageView) findViewById(R.id.btnMan);
         btnWoman = (ImageView) findViewById(R.id.btnWoman);
@@ -47,13 +56,30 @@ public class DeviceActivity extends AppCompatActivity {
         btnState3= (ImageView) findViewById(R.id.btnState3);
         btnState4= (ImageView) findViewById(R.id.btnState4);
 
+        cmbEducationLevel = (Spinner) findViewById(R.id.educationLevel);
+
+
+        // Inicialización de las variables lógicas
+        id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        happService = new HappService();
+
+        // Obtención del os niveles educativos para la recarga del combo
+        ResponseModel response = happService.getAllEducationLevels(id);
+        List<EducationLevelModel> elvs = response.getEducationLevels();
+        /*ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < elvs.size(); i++) {
+            EducationLevelModel elv = elvs.get(i);
+            list.add(elv.getValue());
+        }*/
+        ArrayAdapter<EducationLevelModel> adapter = new ArrayAdapter<EducationLevelModel>(getApplicationContext(),
+                android.R.layout.simple_spinner_item, elvs);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cmbEducationLevel.setAdapter(adapter);
 
     }
 
 
     public void continuar(View view) {
-        String id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
-
         String codeEducationLevel = "SIN";
 
         txtAge = (EditText)findViewById(R.id.age);

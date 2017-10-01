@@ -16,7 +16,7 @@ import happ.es.wrapper.HappResponseWrapper;
 
 public class HappService {
 
-    private static final String URL_BASE = "http://192.168.1.38:8080";
+    private static final String URL_BASE = "http://192.168.1.39:8080";
 
     public ResponseModel conectar(String id) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
@@ -34,6 +34,17 @@ public class HappService {
         }
         return model;
     }
+
+    public ResponseModel getAllEducationLevels(String id) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+            String peticion = URL_BASE + "/happ/envirotment/educationLevels";
+            String response = hacerPeticion(peticion);
+            model = new HappResponseWrapper().toModel(response);
+        }
+        return model;
+    }
+
 
 
     private String search (String id) {

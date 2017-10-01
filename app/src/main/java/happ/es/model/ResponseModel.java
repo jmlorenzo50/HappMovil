@@ -1,5 +1,7 @@
 package happ.es.model;
 
+import java.util.List;
+
 import happ.es.types.TypeResponse;
 
 /**
@@ -15,6 +17,10 @@ public class ResponseModel {
 
     /** The device model. */
     private DeviceModel deviceModel;
+
+    /** The education levels. */
+    private List<EducationLevelModel> educationLevels;
+
 
     /**
      * Gets the type response.
@@ -70,4 +76,19 @@ public class ResponseModel {
         this.deviceModel = deviceModel;
     }
 
+    /**
+     * Gets the educations levels
+     * @return all the educations levels ordered by field ORDERED
+     */
+    public List<EducationLevelModel> getEducationLevels() {
+        return educationLevels;
+    }
+
+    /**
+     * Sets the educations levels
+     * @param educationLevels then new educations levels
+     */
+    public void setEducationLevels(List<EducationLevelModel> educationLevels) {
+        this.educationLevels = educationLevels;
+    }
 }
