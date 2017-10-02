@@ -36,6 +36,9 @@
     <string name="estadoCivil">Estado civil:</string>
     <string name="nivelEstudios">Nivel de estudios:</string>
 
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+
     <string name="soltero">Solter@</string>
     <string name="casado">Casad@</string>
     <string name="divorciado">Divorciad@</string>

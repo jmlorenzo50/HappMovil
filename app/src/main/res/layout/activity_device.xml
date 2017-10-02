@@ -28,37 +28,65 @@
             android:layout_marginTop="20dp"
             />
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:orientation="horizontal"
+            android:layout_height="120dp"
             android:background="#FFFFFF"
             >
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/btnMan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:onClick="selectedMan"
+                    android:layout_marginLeft="30dp"
+                    app:srcCompat="@drawable/happ_man_on" />
 
 
-            <ImageView
-                android:id="@+id/btnMan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:onClick="selectedMan"
-                android:layout_marginLeft="30dp"
-                app:srcCompat="@drawable/happ_man_on" />
+                <ImageView
+                    android:id="@+id/btnWoman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:onClick="selectedWoman"
+                    android:layout_marginRight="30dp"
+                    app:srcCompat="@drawable/happ_woman_off" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hombre"
+                    android:textColor="@color/colorTitulo"
+                    android:layout_marginLeft="30dp"
+                    />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mujer"
+                    android:textColor="@color/colorTitulo"
+                    android:layout_marginRight="30dp"
+                    />
+
+            </TableRow>
 
 
-            <ImageView
-                android:id="@+id/btnWoman"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:onClick="selectedWoman"
-                android:layout_marginRight="30dp"
-                app:srcCompat="@drawable/happ_woman_off" />
+        </TableLayout>
 
-
-        </LinearLayout>
 
         <!-- Edad -->
         <TextView
@@ -74,16 +102,16 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="40dp"
             android:orientation="horizontal"
             android:background="#FFFFFF">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 app:srcCompat="@drawable/years" />
 
             <EditText
@@ -95,8 +123,9 @@
                 android:textColor="@color/colorTitulo"
                 android:textAlignment="center"
                 android:background="@color/colorFondoCuestionario"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_gravity="bottom"
                 android:maxLength="2"
                 />
 
@@ -117,7 +146,7 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="80dp"
             android:background="#FFFFFF"
             >
             <TableRow
@@ -225,21 +254,21 @@
             android:background="#FFFFFF">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 app:srcCompat="@drawable/study" />
 
 
             <Spinner
                 android:id="@+id/educationLevel"
-                android:layout_width="200dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/btn_dropdown"
                 android:textColor="@color/colorTitulo"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:spinnerMode="dropdown"
                 android:layout_weight="10" />
@@ -250,20 +279,32 @@
 
 
         <!-- Botón -->
-        <TextView
-            android:id="@+id/btnContinuar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:fontFamily="sans-serif"
-            android:text="@string/continuar"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="18dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@drawable/boton_largo_verde"
-            android:onClick="continuar"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            >
+
+
+            <TextView
+                    android:id="@+id/btnContinuar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/continuar"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:background="@drawable/boton_largo_pistacho"
+                    android:onClick="continuar"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+
+                />
+        </RelativeLayout>
 
     </LinearLayout>
 

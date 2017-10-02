@@ -54,7 +54,7 @@
             android:textSize="18dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:background="@drawable/boton_largo_verde"
+            android:background="@drawable/boton_largo_pistacho"
             android:onClick="continuar"/>
 
     </LinearLayout>
