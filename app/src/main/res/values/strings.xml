@@ -45,6 +45,14 @@
     <string name="viudo">Viud@</string>
 
     <string name="configuracion">Configuración</string>
+    <string name="title_activity_questionary">Cuestionario</string>
+
+
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="paginador_cuestinario">Página %1$d de %2$d</string>
+
+    <string name="pregunta_cuestinario">%1$s</string>
 
 </resources>
 

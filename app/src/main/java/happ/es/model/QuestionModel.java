@@ -1,12 +1,14 @@
-package es.happ.server.model;
+package happ.es.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
  * The Class QuestionModel.
  */
-public class QuestionModel implements HappModel {
+public class QuestionModel {
 
 	/** The question id. */
 	private Long questionId;
@@ -16,9 +18,12 @@ public class QuestionModel implements HappModel {
 	
 	/** The statement. */
 	private String statement;
-	
+
 	/** The answers. */
-	private Set<AnswerModel> answers = new HashSet<AnswerModel>();
+	private List<AnswerModel> answers = new ArrayList<>();
+
+	/** The selected answer */
+	private AnswerModel answerSelected;
 
 	
 	/**
@@ -87,7 +92,7 @@ public class QuestionModel implements HappModel {
 	 *
 	 * @return the answers
 	 */
-	public Set<AnswerModel> getAnswers() {
+	public List<AnswerModel>  getAnswers() {
 		return answers;
 	}
 
@@ -96,10 +101,25 @@ public class QuestionModel implements HappModel {
 	 *
 	 * @param answers the new answers
 	 */
-	public void setAnswers(Set<AnswerModel> answers) {
+	public void setAnswers(List<AnswerModel>  answers) {
 		this.answers = answers;
 	}
-	
 
-	
+	/**
+	 *
+	 * @return
+	 */
+	public AnswerModel getAnswerSelected() {
+		return answerSelected;
+	}
+
+	/**
+	 *
+	 * @param answerSelected
+	 */
+	public void setAnswerSelected(AnswerModel answerSelected) {
+		this.answerSelected = answerSelected;
+	}
+
+
 }

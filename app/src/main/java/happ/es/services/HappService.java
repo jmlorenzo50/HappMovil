@@ -6,7 +6,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 
+import happ.es.model.QuestionModel;
+import happ.es.model.QuestionaryModel;
 import happ.es.model.ResponseModel;
 import happ.es.types.Gender;
 import happ.es.types.MaritalStatus;
@@ -41,6 +44,45 @@ public class HappService {
             String peticion = URL_BASE + "/happ/envirotment/educationLevels";
             String response = hacerPeticion(peticion);
             model = new HappResponseWrapper().toModel(response);
+        }
+        return model;
+    }
+
+    public ResponseModel getSessionsForAnswer(String id) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+            String peticion = URL_BASE + "/happ/questionary/session/forAnswer?id=" + id;
+            String response = hacerPeticion(peticion);
+            model = new HappResponseWrapper().toModel(response);
+        }
+        return model;
+    }
+
+    public ResponseModel getAllQuestionary(String id) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+            String peticion = URL_BASE + "/happ/questionary/all";
+            String response = hacerPeticion(peticion);
+            model = new HappResponseWrapper().toModel(response);
+        }
+        return model;
+    }
+
+
+    public ResponseModel sendQuestinary(String id, String sessionId, QuestionaryModel questionaryModel) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+            List<QuestionModel> questions = questionaryModel.getQuestions();
+            for (QuestionModel q: questions) {
+                String peticion = URL_BASE
+                                + "/happ/questionary/session/answer?"
+                                + "id=" + q.getQuestionId()
+                                + "&session=" + sessionId
+                                + "&answer=" + q.getAnswerSelected().getAnswerId();
+                String response = hacerPeticion(peticion);
+                //model = new HappResponseWrapper().toModel(response);
+            }
+
         }
         return model;
     }

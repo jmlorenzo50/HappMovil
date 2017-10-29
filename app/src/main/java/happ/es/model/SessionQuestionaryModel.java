@@ -1,4 +1,4 @@
-package es.happ.server.model;
+package happ.es.model;
 
 import java.sql.Timestamp;
 import java.util.HashSet;
@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * The Class SessionCuestionary.
  */
-public class SessionQuestionaryModel implements HappModel{
+public class SessionQuestionaryModel {
 	
 	/** The session id. */
 	private Long sessionId;

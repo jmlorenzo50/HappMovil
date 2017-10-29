@@ -111,9 +111,17 @@ public class DeviceActivity extends AppCompatActivity {
 
         ResponseModel response = happService.actualizarDispositivo(id, age, selectedMan? Gender.MAN: Gender.WOMAN, maritalStatus, educationLevelModel.getCode());
         if (response.getTypeResponse() == TypeResponse.OK) {
-            Intent intent = new Intent(this, PanelControlActivity.class);
+
+            response = happService.getSessionsForAnswer(id);
+            Intent intent = null;
+            if (response.getTypeResponse() == TypeResponse.OK && response.getFirstSessionQuestionary() != null) {
+                intent = new Intent(this, QuestionaryActivity.class);
+            } else {
+                intent = new Intent(this, PanelControlActivity.class);
+            }
             finish();
             startActivity(intent);
+
         }
 
     }

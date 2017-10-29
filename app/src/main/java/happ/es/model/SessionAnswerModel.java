@@ -1,10 +1,10 @@
-package es.happ.server.model;
+package happ.es.model;
 
 
 /**
  * The Class SessionAnswer.
  */
-public class SessionAnswerModel  implements HappModel{
+public class SessionAnswerModel {
 	
 	/** The session answer id. */
 	private Long sessionAnswerId;

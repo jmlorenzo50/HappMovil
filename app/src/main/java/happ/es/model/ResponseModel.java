@@ -21,6 +21,13 @@ public class ResponseModel {
     /** The education levels. */
     private List<EducationLevelModel> educationLevels;
 
+    /** The session questionary model */
+    private SessionQuestionaryModel firstSessionQuestionary;
+
+    /** The questinçonary active */
+    private QuestionaryModel questionaryModel;
+
+
 
     /**
      * Gets the type response.
@@ -91,4 +98,37 @@ public class ResponseModel {
     public void setEducationLevels(List<EducationLevelModel> educationLevels) {
         this.educationLevels = educationLevels;
     }
+
+    /**
+     * Obtiene el questionary model
+     * @return
+     */
+    public SessionQuestionaryModel getFirstSessionQuestionary() {
+        return firstSessionQuestionary;
+    }
+
+    /**
+     * Establece el questionary model
+     * @param firstSessionQuestionary
+     */
+    public void setFirstSessionQuestionary(SessionQuestionaryModel firstSessionQuestionary) {
+        this.firstSessionQuestionary = firstSessionQuestionary;
+    }
+
+    /**
+     * Obtiene questionary model
+     * @return
+     */
+    public QuestionaryModel getQuestionaryModel() {
+        return questionaryModel;
+    }
+
+    /**
+     * Establece el cuestionatio activo
+     * @param questionaryModel
+     */
+    public void setQuestionaryModel(QuestionaryModel questionaryModel) {
+        this.questionaryModel = questionaryModel;
+    }
+
 }

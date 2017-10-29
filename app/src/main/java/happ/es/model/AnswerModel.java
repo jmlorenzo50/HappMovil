@@ -1,9 +1,9 @@
-package es.happ.server.model;
+package happ.es.model;
 
 /**
  * The Class AnswerEntity.
  */
-public class AnswerModel implements HappModel{
+public class AnswerModel {
 	
 	/** The answer id. */
 	private Long answerId;
