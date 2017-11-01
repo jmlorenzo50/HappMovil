@@ -69,14 +69,14 @@ public class HappService {
     }
 
 
-    public ResponseModel sendQuestinary(String id, String sessionId, QuestionaryModel questionaryModel) {
+    public ResponseModel sendQuestinary(String id, Long sessionId, QuestionaryModel questionaryModel) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
             List<QuestionModel> questions = questionaryModel.getQuestions();
             for (QuestionModel q: questions) {
                 String peticion = URL_BASE
                                 + "/happ/questionary/session/answer?"
-                                + "id=" + q.getQuestionId()
+                                + "id=" + id
                                 + "&session=" + sessionId
                                 + "&answer=" + q.getAnswerSelected().getAnswerId();
                 String response = hacerPeticion(peticion);

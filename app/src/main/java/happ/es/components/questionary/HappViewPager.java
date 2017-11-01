@@ -15,14 +15,28 @@ public class HappViewPager extends ViewPager {
 
     private boolean enabled;
 
+    private int numberQuestions;
+
+    private int pregunta;
+
+    public int getNumberQuestions() {
+        return numberQuestions;
+    }
+
+    public void setNumberQuestions(int numberQuestions) {
+        this.numberQuestions = numberQuestions;
+    }
+
     public HappViewPager(Context context) {
         super(context);
         this.enabled = true;
+        pregunta = 0;
     }
 
     public HappViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.enabled = true;
+        pregunta = 0;
     }
 
     @Override
@@ -48,10 +62,10 @@ public class HappViewPager extends ViewPager {
     }
 
     public boolean nextPage() {
-        if (this.getCurrentItem() <= this.getChildCount()) {
-            this.setCurrentItem(this.getCurrentItem() + 1);
+        if (pregunta < numberQuestions) {
+            pregunta++;
+            this.setCurrentItem(pregunta);
         }
-        boolean itemfinal = (this.getCurrentItem() + 1 == this.getChildCount());
-        return itemfinal;
+        return (pregunta >= numberQuestions);
     }
 }

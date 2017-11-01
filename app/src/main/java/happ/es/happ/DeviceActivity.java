@@ -20,6 +20,7 @@ import happ.es.types.Gender;
 import happ.es.types.MaritalStatus;
 import happ.es.types.ParamIntent;
 import happ.es.types.TypeResponse;
+import happ.es.util.SessionsForAnswerUtil;
 
 public class DeviceActivity extends AppCompatActivity {
 
@@ -112,7 +113,9 @@ public class DeviceActivity extends AppCompatActivity {
         ResponseModel response = happService.actualizarDispositivo(id, age, selectedMan? Gender.MAN: Gender.WOMAN, maritalStatus, educationLevelModel.getCode());
         if (response.getTypeResponse() == TypeResponse.OK) {
 
-            response = happService.getSessionsForAnswer(id);
+            SessionsForAnswerUtil.test(id, happService, this);
+
+            /*response = happService.getSessionsForAnswer(id);
             Intent intent = null;
             if (response.getTypeResponse() == TypeResponse.OK && response.getFirstSessionQuestionary() != null) {
                 intent = new Intent(this, QuestionaryActivity.class);
@@ -120,7 +123,7 @@ public class DeviceActivity extends AppCompatActivity {
                 intent = new Intent(this, PanelControlActivity.class);
             }
             finish();
-            startActivity(intent);
+            startActivity(intent);*/
 
         }
 

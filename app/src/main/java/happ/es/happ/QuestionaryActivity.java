@@ -28,6 +28,7 @@ import happ.es.components.questionary.SectionsPagerAdapter;
 import happ.es.model.QuestionaryModel;
 import happ.es.model.ResponseModel;
 import happ.es.services.HappService;
+import happ.es.util.SessionsForAnswerUtil;
 
 public class QuestionaryActivity extends AppCompatActivity {
 
@@ -48,7 +49,7 @@ public class QuestionaryActivity extends AppCompatActivity {
     private String id;
 
     // SessionId
-    private String sessionId;
+    private Long sessionId;
 
     // Control de paginación
     private HappViewPager viewPager;
@@ -69,7 +70,7 @@ public class QuestionaryActivity extends AppCompatActivity {
         // Preparación de datos
         ResponseModel response = happService.getSessionsForAnswer(id);
 
-        sessionId = response.getFirstSessionQuestionary().getAndroidId();
+        sessionId = response.getFirstSessionQuestionary().getSessionId();
         questionaryModel = response.getQuestionaryModel();
 
         // Preparación ventana
@@ -85,6 +86,7 @@ public class QuestionaryActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         viewPager =  (HappViewPager)findViewById(R.id.container);
         viewPager.setPagingEnabled(false);
+        viewPager.setNumberQuestions(questionaryModel.getQuestions().size());
         viewPager.setAdapter(mSectionsPagerAdapter);
     }
 
@@ -116,7 +118,7 @@ public class QuestionaryActivity extends AppCompatActivity {
         boolean lastItem = viewPager.nextPage();
         if (lastItem) {
             happService.sendQuestinary(id, sessionId, questionaryModel);
-            //TODO Enviar respuestas y verificar si hay otro Cuestionario
+            SessionsForAnswerUtil.test(id, happService, this);
         }
     }
 
