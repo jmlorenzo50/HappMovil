@@ -36,8 +36,8 @@ public class HappResponseWrapper {
 
             // Lectura de los datos del dispositivo
             DeviceModel device = new DeviceModel();
-            if (exist(reader, "deviceModel")) {
-                JSONObject deviceModel = reader.getJSONObject("deviceModel");
+            if (exist(reader, "device")) {
+                JSONObject deviceModel = reader.getJSONObject("device");
                 device.setAndroidId(deviceModel.getString("androidId"));
                 device.setGender(Gender.valueOf(deviceModel.getString("gender")));
                 device.setAge(deviceModel.getInt("age"));
@@ -67,10 +67,10 @@ public class HappResponseWrapper {
                 JSONObject deviceModel = reader.getJSONObject("firstSessionQuestionary");
 
                 SessionQuestionaryModel sqm = new SessionQuestionaryModel();
-                sqm.setSessionId(deviceModel.getLong("sessionId"));
+                sqm.setSessionId(deviceModel.getLong("scheduledTaskQuestionaryId"));
                 sqm.setAndroidId(deviceModel.getString("androidId"));
                 //sqm.setDateSession(deviceModel.getLong("dateSession"));
-                sqm.setFinished(deviceModel.getBoolean("finished"));
+                sqm.setFinished(deviceModel.getString("finishedDate") != null);
                 //@TODO Establecer las respuestas ya procesadas
                 //sqm.setSessionAnswers();
 
