@@ -29,18 +29,26 @@
             android:name=".PanelControlActivity"
             android:label="@string/title_activity_panel_control"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+
         <activity android:name=".MenuActivity" />
 
-        <activity
-            android:name=".ActosBodadActivity"
-            android:label="@string/title_activity_actos_bondad"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".DeviceActivity" />
 
         <activity
             android:name=".QuestionaryActivity"
             android:label="@string/title_activity_questionary"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name=".ActosBodadActivity"
+            android:label="@string/title_activity_actos_bondad"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name=".ValoracionDiaActivity"
+            android:label="@string/title_activity_valoracion_dia"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
     </application>
 
 </manifest>

@@ -3,10 +3,8 @@ package happ.es.happ;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,14 +12,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
-public class PanelControlActivity extends AppCompatActivity
+import happ.es.util.ConstantesValoracionDia;
+
+public class ValoracionDiaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+
+    private boolean mostrarInstrucciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_panel_control);
+        setContentView(R.layout.activity_valoracion_dia);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -42,6 +47,26 @@ public class PanelControlActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        Intent intent = getIntent();
+        mostrarInstrucciones = intent.getBooleanExtra(ConstantesValoracionDia.MOSTRAR_INSTRUCCIONES, true);
+
+        LinearLayout instrucciones = (LinearLayout) findViewById(R.id.instrucciones);
+        if (mostrarInstrucciones == false) {
+            instrucciones.setVisibility(View.GONE);
+        } else {
+            instrucciones.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+
+    public void irValoracionDiaMenu(View view) {
+        Intent intent = new Intent(this, ValoracionDiaActivity.class);
+        intent.putExtra(ConstantesValoracionDia.MOSTRAR_INSTRUCCIONES, false);
+        finish();
+        startActivity(intent);
     }
 
     @Override
@@ -57,7 +82,7 @@ public class PanelControlActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.panel_control_setting, menu);
+        getMenuInflater().inflate(R.menu.actos_bondad_setting, menu);
         return true;
     }
 
@@ -82,8 +107,6 @@ public class PanelControlActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        Fragment fragment = null;
-
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
@@ -103,17 +126,9 @@ public class PanelControlActivity extends AppCompatActivity
         return true;
     }
 
-
-    public void irActosBondad(View view) {
-        Intent intent = new Intent(this, ActosBodadActivity.class);
+    public void irConfiguracion() {
+        Intent intent = new Intent(this, DeviceActivity.class);
         startActivity(intent);
     }
-
-
-    public void irValoracionDia(View view) {
-        Intent intent = new Intent(this, ValoracionDiaActivity.class);
-        startActivity(intent);
-    }
-
 
 }
