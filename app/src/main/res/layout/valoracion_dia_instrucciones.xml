@@ -168,7 +168,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:background="@drawable/boton_largo_valoracion_dia"
-            android:onClick="irValoracionDiaMenu"/>
+            android:onClick="irValoracionDiaAlta"/>
 
 
 

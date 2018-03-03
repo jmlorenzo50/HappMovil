@@ -1,0 +1,379 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    tools:showIn="@layout/valoracion_dia_bar">
+
+<LinearLayout
+    android:id="@+id/valoracion_dia_menu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <!-- Contenido -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- Hoy -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#ffffff"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icono_valoracion_dia"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/valoracion_dia_hoy"
+                    android:textAlignment="center"
+                    android:textColor="#696969"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorValoracionDia"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/valoracion_dia_sin_datos"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <!-- Botón -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/realizar_ahora"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="12dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/boton_largo_valoracion_dia"
+                android:onClick="irValoracionEstadoAnimico"/>
+
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- Ayer -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#ffffff"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icono_valoracion_dia"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="@string/valoracion_dia_ayer"
+                    android:textAlignment="center"
+                    android:textColor="#696969"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorValoracionDia"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener comida que meterme en la boca"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Que haya salido el sol"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Que haya salido la luna"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- Hace 2 dias -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#ffffff"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icono_valoracion_dia"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="29/10"
+                    android:textAlignment="center"
+                    android:textColor="#696969"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorValoracionDia"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener comida que meterme en la boca"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Que haya salido el sol"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Que haya salido la luna"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- Hace 3 dias -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#ffffff"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icono_valoracion_dia"
+                    android:layout_margin="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="28/10"
+                    android:textAlignment="center"
+                    android:textColor="#696969"
+                    android:textSize="12dp"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorValoracionDia"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener comida que meterme en la boca"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Que haya salido el sol"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Que haya salido la luna"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif"
+                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
+                android:textAlignment="viewStart"
+                android:textColor="#696969"
+                android:textSize="12dp" />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+
+
+</FrameLayout>

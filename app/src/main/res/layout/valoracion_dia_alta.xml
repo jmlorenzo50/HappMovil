@@ -1,0 +1,40 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    tools:showIn="@layout/valoracion_dia_bar">
+
+<LinearLayout
+    android:id="@+id/realizar_valoracion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    >
+
+
+    <!-- Botón -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/realizar_ahora"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="12dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/boton_largo_valoracion_dia"
+        android:onClick="darAlta"/>
+
+
+
+</LinearLayout>
+
+
+
+
+</FrameLayout>

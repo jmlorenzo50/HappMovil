@@ -9,10 +9,12 @@
     tools:showIn="@layout/valoracion_dia_bar"
     android:background="#ffffff">
 
+    <include layout="@layout/valoracion_dia_menu"/>
 
+    <include layout="@layout/valoracion_dia_estado_animico"/>
 
     <include layout="@layout/valoracion_dia_instrucciones"/>
 
-
+    <include layout="@layout/valoracion_dia_alta"/>
 
 </android.support.constraint.ConstraintLayout>

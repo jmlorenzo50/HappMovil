@@ -24,9 +24,14 @@
     <string name="valoracion_dia_cita_03">Los estudios muestran también que realizar actos de bondad regularmente nos hace felices durante bastante tiempo, pero la clave es la variedad en estos actos.</string>
     <string name="valoracion_dia_cita_04">1. Desde happ! recomendamos realizar de 3 a 5 actos de bondad al día, para notar resultados.</string>
     <string name="valoracion_dia_cita_05">2. Recuerda que la variedad es la clave, sorpréndenos añadiendo cualquier acto que se te ocurra.</string>
+    <string name="valoracion_dia_hoy">Hoy</string>
+    <string name="valoracion_dia_ayer">Ayer</string>
+    <string name="valoracion_dia_sin_datos">Todavía no has escrito tu valoración del día</string>
+
 
     <string name="instrucciones">Instrucciones</string>
     <string name="empezar_ahora">EMPEZAR AHORA</string>
+    <string name="realizar_ahora">REALIZAR AHORA</string>
     <string name="no_mostrar_texto">No volver a mostrar este texto</string>
     <string name="eduardo_galeano">Eduardo Galeano</string>
 

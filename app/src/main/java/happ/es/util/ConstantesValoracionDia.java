@@ -6,6 +6,7 @@ package happ.es.util;
 
 public class ConstantesValoracionDia {
 
-    public static String MOSTRAR_INSTRUCCIONES = "MOSTRAR_INSTRUCCIONES";
+    public static String NAVEGACION = "NAVEGACION";
+
 
 }

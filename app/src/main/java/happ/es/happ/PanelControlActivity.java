@@ -15,6 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import happ.es.types.NavValoracionDia;
+import happ.es.util.ConstantesValoracionDia;
+
 public class PanelControlActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -112,6 +115,7 @@ public class PanelControlActivity extends AppCompatActivity
 
     public void irValoracionDia(View view) {
         Intent intent = new Intent(this, ValoracionDiaActivity.class);
+        intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.MENU.name());
         startActivity(intent);
     }
 

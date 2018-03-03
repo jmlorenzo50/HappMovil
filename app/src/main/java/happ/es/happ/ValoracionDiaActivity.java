@@ -15,13 +15,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import happ.es.types.NavValoracionDia;
 import happ.es.util.ConstantesValoracionDia;
 
 public class ValoracionDiaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    private boolean mostrarInstrucciones;
+    private NavValoracionDia navegacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,24 +51,63 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
 
         Intent intent = getIntent();
-        mostrarInstrucciones = intent.getBooleanExtra(ConstantesValoracionDia.MOSTRAR_INSTRUCCIONES, true);
 
+        LinearLayout valoracionDiaMenu = (LinearLayout) findViewById(R.id.valoracion_dia_menu);
+        LinearLayout estado_animico = (LinearLayout) findViewById(R.id.estado_animico);
         LinearLayout instrucciones = (LinearLayout) findViewById(R.id.instrucciones);
-        if (mostrarInstrucciones == false) {
-            instrucciones.setVisibility(View.GONE);
-        } else {
+        LinearLayout realizarValoracion = (LinearLayout) findViewById(R.id.realizar_valoracion);
+
+        valoracionDiaMenu.setVisibility(View.GONE);
+        estado_animico.setVisibility(View.GONE);
+        instrucciones.setVisibility(View.GONE);
+        realizarValoracion.setVisibility(View.GONE);
+
+        navegacion = NavValoracionDia.valueOf(intent.getStringExtra (ConstantesValoracionDia.NAVEGACION));
+        if (navegacion == NavValoracionDia.MENU) {
+            valoracionDiaMenu.setVisibility(View.VISIBLE);
+        } else if (navegacion == NavValoracionDia.ESTADO_ANIMICO) {
+            estado_animico.setVisibility(View.VISIBLE);
+        } else if (navegacion == NavValoracionDia.INSTRUCCIONES) {
             instrucciones.setVisibility(View.VISIBLE);
+        } else if (navegacion == NavValoracionDia.ALTA) {
+            realizarValoracion.setVisibility(View.VISIBLE);
         }
 
     }
 
-
-    public void irValoracionDiaMenu(View view) {
+/*    public void irValoracionMenu(View view) {
         Intent intent = new Intent(this, ValoracionDiaActivity.class);
-        intent.putExtra(ConstantesValoracionDia.MOSTRAR_INSTRUCCIONES, false);
+        intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.MENU.name());
+        startActivity(intent);
+    }*/
+
+    public void irValoracionEstadoAnimico(View view) {
+        Intent intent = new Intent(this, ValoracionDiaActivity.class);
+        intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.ESTADO_ANIMICO.name());
+        startActivity(intent);
+    }
+
+    public void irValoracionInstrucciones(View view) {
+        Intent intent = new Intent(this, ValoracionDiaActivity.class);
+        intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.INSTRUCCIONES.name());
         finish();
         startActivity(intent);
     }
+
+    public void irValoracionDiaAlta(View view) {
+        Intent intent = new Intent(this, ValoracionDiaActivity.class);
+        intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.ALTA.name());
+        finish();
+        startActivity(intent);
+    }
+
+    public void darAlta(View view) {
+        // Guardar datos
+        finish();
+    }
+
+
+
 
     @Override
     public void onBackPressed() {
