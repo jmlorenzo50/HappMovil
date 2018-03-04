@@ -57,7 +57,6 @@ public class QuestionaryActivity extends AppCompatActivity {
     // Cuestionario
     private QuestionaryModel questionaryModel;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

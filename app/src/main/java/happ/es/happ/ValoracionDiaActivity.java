@@ -2,6 +2,7 @@ package happ.es.happ;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -10,11 +11,19 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import java.sql.Timestamp;
+import java.util.List;
+
+import happ.es.model.ResponseModel;
+import happ.es.model.ValorationsLastWeekModel;
+import happ.es.services.HappService;
 import happ.es.types.NavValoracionDia;
 import happ.es.util.ConstantesValoracionDia;
 
@@ -23,6 +32,20 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
 
     private NavValoracionDia navegacion;
+
+    private HappService happService;
+
+    private ValorationsLastWeekModel valorationsLastWeekModel;
+
+    private LinearLayout day0Nodatafound, day0Datafound;
+    private LinearLayout day1Nodatafound, day1Datafound;
+    private LinearLayout day2Nodatafound, day2Datafound;
+    private LinearLayout day3Nodatafound, day3Datafound;
+    private LinearLayout day4Nodatafound, day4Datafound;
+    private LinearLayout day5Nodatafound, day5Datafound;
+    private LinearLayout day6Nodatafound, day6Datafound;
+
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +72,27 @@ public class ValoracionDiaActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        // SERVICIO
+        happService = new HappService();
+        id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
 
+        // OBJETOS
+        day0Nodatafound = (LinearLayout) findViewById(R.id.day0Nodatafound);
+        day0Datafound = (LinearLayout) findViewById(R.id.day0Datafound);
+        day1Nodatafound = (LinearLayout) findViewById(R.id.day1Nodatafound);
+        day1Datafound = (LinearLayout) findViewById(R.id.day1Datafound);
+        day2Nodatafound = (LinearLayout) findViewById(R.id.day2Nodatafound);
+        day2Datafound = (LinearLayout) findViewById(R.id.day2Datafound);
+        day3Nodatafound = (LinearLayout) findViewById(R.id.day3Nodatafound);
+        day3Datafound = (LinearLayout) findViewById(R.id.day3Datafound);
+        day4Nodatafound = (LinearLayout) findViewById(R.id.day4Nodatafound);
+        day4Datafound = (LinearLayout) findViewById(R.id.day4Datafound);
+        day5Nodatafound = (LinearLayout) findViewById(R.id.day5Nodatafound);
+        day5Datafound = (LinearLayout) findViewById(R.id.day5Datafound);
+        day6Nodatafound = (LinearLayout) findViewById(R.id.day6Nodatafound);
+        day6Datafound = (LinearLayout) findViewById(R.id.day6Datafound);
+
+        // NAVEGACION
         Intent intent = getIntent();
 
         LinearLayout valoracionDiaMenu = (LinearLayout) findViewById(R.id.valoracion_dia_menu);
@@ -65,6 +108,7 @@ public class ValoracionDiaActivity extends AppCompatActivity
         navegacion = NavValoracionDia.valueOf(intent.getStringExtra (ConstantesValoracionDia.NAVEGACION));
         if (navegacion == NavValoracionDia.MENU) {
             valoracionDiaMenu.setVisibility(View.VISIBLE);
+            prepararListaValoraicones();
         } else if (navegacion == NavValoracionDia.ESTADO_ANIMICO) {
             estado_animico.setVisibility(View.VISIBLE);
         } else if (navegacion == NavValoracionDia.INSTRUCCIONES) {
@@ -170,5 +214,148 @@ public class ValoracionDiaActivity extends AppCompatActivity
         Intent intent = new Intent(this, DeviceActivity.class);
         startActivity(intent);
     }
+
+    private void prepararListaValoraicones() {
+        valorationsLastWeekModel = new ValorationsLastWeekModel(new Timestamp(0));
+
+        // DIA 0
+        ResponseModel response = happService.getListValorationsLastWeek(id, "21", "01", "2018");
+        valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY0, response.getValorations());
+        if (response.getValorations() != null && response.getValorations().size() > 0) {
+            day0Nodatafound.setVisibility(View.GONE);
+            day0Datafound.setVisibility(View.VISIBLE);
+
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto0), 0);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto1), 1);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto2), 2);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto3), 3);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto4), 4);
+
+
+        } else {
+            day0Nodatafound.setVisibility(View.VISIBLE);
+            day0Datafound.setVisibility(View.GONE);
+        }
+
+        // DIA 1
+        response = happService.getListValorationsLastWeek(id, "20", "01", "2018");
+        valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY1, response.getValorations());
+        if (response.getValorations() != null && response.getValorations().size() > 0) {
+            day1Nodatafound.setVisibility(View.GONE);
+            day1Datafound.setVisibility(View.VISIBLE);
+
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day1Texto0), 0);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day1Texto1), 1);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day1Texto2), 2);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day1Texto3), 3);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day1Texto4), 4);
+
+
+        } else {
+            day1Nodatafound.setVisibility(View.VISIBLE);
+            day1Datafound.setVisibility(View.GONE);
+        }
+
+        // DIA 2
+        response = happService.getListValorationsLastWeek(id, "19", "01", "2018");
+        valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY2, response.getValorations());
+        if (response.getValorations() != null && response.getValorations().size() > 0) {
+            day2Nodatafound.setVisibility(View.GONE);
+            day2Datafound.setVisibility(View.VISIBLE);
+
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day2Texto0), 0);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day2Texto1), 1);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day2Texto2), 2);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day2Texto3), 3);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day2Texto4), 4);
+
+
+        } else {
+            day2Nodatafound.setVisibility(View.VISIBLE);
+            day2Datafound.setVisibility(View.GONE);
+        }
+
+        // DIA 3
+        response = happService.getListValorationsLastWeek(id, "18", "01", "2018");
+        valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY3, response.getValorations());
+        if (response.getValorations() != null && response.getValorations().size() > 0) {
+            day3Nodatafound.setVisibility(View.GONE);
+            day3Datafound.setVisibility(View.VISIBLE);
+
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day3Texto0), 0);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day3Texto1), 1);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day3Texto2), 2);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day3Texto3), 3);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day3Texto4), 4);
+
+
+        } else {
+            day3Nodatafound.setVisibility(View.VISIBLE);
+            day3Datafound.setVisibility(View.GONE);
+        }
+
+
+        // DIA 4
+        response = happService.getListValorationsLastWeek(id, "17", "01", "2018");
+        valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY4, response.getValorations());
+        if (response.getValorations() != null && response.getValorations().size() > 0) {
+            day4Nodatafound.setVisibility(View.GONE);
+            day4Datafound.setVisibility(View.VISIBLE);
+
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day4Texto0), 0);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day4Texto1), 1);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day4Texto2), 2);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day4Texto3), 3);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day4Texto4), 4);
+        } else {
+            day4Nodatafound.setVisibility(View.VISIBLE);
+            day4Datafound.setVisibility(View.GONE);
+        }
+
+        // DIA 5
+        response = happService.getListValorationsLastWeek(id, "16", "01", "2018");
+        valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY5, response.getValorations());
+        if (response.getValorations() != null && response.getValorations().size() > 0) {
+            day5Nodatafound.setVisibility(View.GONE);
+            day5Datafound.setVisibility(View.VISIBLE);
+
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day5Texto0), 0);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day5Texto1), 1);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day5Texto2), 2);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day5Texto3), 3);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day5Texto4), 4);
+        } else {
+            day5Nodatafound.setVisibility(View.VISIBLE);
+            day5Datafound.setVisibility(View.GONE);
+        }
+
+        // DIA 6
+        response = happService.getListValorationsLastWeek(id, "16", "01", "2018");
+        valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY6, response.getValorations());
+        if (response.getValorations() != null && response.getValorations().size() > 0) {
+            day6Nodatafound.setVisibility(View.GONE);
+            day6Datafound.setVisibility(View.VISIBLE);
+
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day6Texto0), 0);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day6Texto1), 1);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day6Texto2), 2);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day6Texto3), 3);
+            prepararValoracionPuntual(response, (TextView) findViewById(R.id.day6Texto4), 4);
+        } else {
+            day6Nodatafound.setVisibility(View.VISIBLE);
+            day6Datafound.setVisibility(View.GONE);
+        }
+
+    }
+
+    private void prepararValoracionPuntual(ResponseModel response, TextView textView, int n) {
+        if (response.getValorations().size() > n) {
+            textView.setVisibility(View.VISIBLE);
+            textView.setText(response.getValorations().get(n).getTextValoration());
+        } else {
+            textView.setVisibility(View.GONE);
+        }
+    }
+
 
 }

@@ -60,7 +60,6 @@
                     />
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
@@ -69,30 +68,19 @@
                 android:paddingBottom="10dp"
                 />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="@string/valoracion_dia_sin_datos"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day0Nodatafound">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
+                <!-- Botón -->
+                <TextView android:text="@string/realizar_ahora" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:textAlignment="center" android:textColor="@color/blanco"  android:textSize="12dp" android:layout_gravity="center" android:gravity="center" android:background="@drawable/boton_largo_valoracion_dia" android:onClick="irValoracionEstadoAnimico"/>
+            </LinearLayout>
 
-            <!-- Botón -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="@string/realizar_ahora"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:textSize="12dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:background="@drawable/boton_largo_valoracion_dia"
-                android:onClick="irValoracionEstadoAnimico"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day0Datafound">
+                <TextView android:id="@+id/day0Texto0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day0Texto1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day0Texto2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day0Texto3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day0Texto4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+            </LinearLayout>
 
 
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -134,56 +122,17 @@
                 android:paddingBottom="10dp"
                 />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener comida que meterme en la boca"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day1Nodatafound">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Que haya salido el sol"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Que haya salido la luna"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
-
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day1Datafound">
+                <TextView android:id="@+id/day1Texto0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day1Texto1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day1Texto2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day1Texto3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day1Texto4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+            </LinearLayout>
 
 
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -225,146 +174,104 @@
                 android:paddingBottom="10dp"
                 />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener comida que meterme en la boca"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day2Nodatafound">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Que haya salido el sol"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Que haya salido la luna"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day2Datafound">
+                <TextView android:id="@+id/day2Texto0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day2Texto1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day2Texto2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day2Texto3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day2Texto4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+            </LinearLayout>
 
 
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- Hace 3 dias -->
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="#ffffff"
-                >
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
+                <TextView android:text="28/10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/icono_valoracion_dia"
-                    android:layout_margin="10dp"
-                    />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day3Nodatafound">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
+            </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:fontFamily="sans-serif-smallcaps"
-                    android:text="28/10"
-                    android:textAlignment="center"
-                    android:textColor="#696969"
-                    android:textSize="12dp"
-                    android:textStyle="bold"
-                    />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day3Datafound">
+                <TextView android:id="@+id/day3Texto0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day3Texto1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day3Texto2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day3Texto3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day3Texto4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorValoracionDia"
-                android:orientation="horizontal"
-                android:paddingBottom="10dp"
-                />
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- Hace 4 dias -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
+                <TextView android:text="27/10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener comida que meterme en la boca"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day4Nodatafound">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day4Datafound">
+                <TextView android:id="@+id/day4Texto0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day4Texto1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day4Texto2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day4Texto3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day4Texto4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Que haya salido el sol"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- Hace 5 dias -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
+                <TextView android:text="26/10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Que haya salido la luna"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day5Nodatafound">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tener una familia maravillosa que esta dispuesta a todo para ayudarme"
-                android:textAlignment="viewStart"
-                android:textColor="#696969"
-                android:textSize="12dp" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day5Datafound">
+                <TextView android:id="@+id/day5Texto0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day5Texto1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day5Texto2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day5Texto3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day5Texto4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+            </LinearLayout>
 
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!-- Hace 6 dias -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
+                <TextView android:text="25/10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
+
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day6Nodatafound">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day6Datafound">
+                <TextView android:id="@+id/day6Texto0" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day6Texto1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day6Texto2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day6Texto3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+                <TextView android:id="@+id/day6Texto4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
+            </LinearLayout>
 
 
         </LinearLayout>

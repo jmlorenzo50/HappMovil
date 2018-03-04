@@ -3,7 +3,9 @@ package happ.es.wrapper;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -15,6 +17,7 @@ import happ.es.model.QuestionModel;
 import happ.es.model.QuestionaryModel;
 import happ.es.model.ResponseModel;
 import happ.es.model.SessionQuestionaryModel;
+import happ.es.model.ValorationModel;
 import happ.es.types.Gender;
 import happ.es.types.TypeResponse;
 
@@ -123,6 +126,24 @@ public class HappResponseWrapper {
             }
 
 
+            if (exist(reader, "valuationModels")) {
+                JSONArray valuations = reader.getJSONArray("valuationModels");
+
+                List<ValorationModel> valuationsModel = new ArrayList<>();
+
+                for (int i = 0; i < valuations.length(); i++) {
+                    JSONObject jsonobject = valuations.getJSONObject(i);
+
+                    ValorationModel v = new ValorationModel();
+                    v.setOrder(i);
+                    v.setTextValoration(jsonobject.getString("valuationText"));
+                    Long dateLong = jsonobject.getLong("valuationDate");
+                    v.setDateValoration(new Timestamp(dateLong));
+
+                    valuationsModel.add(v);
+                }
+                model.setValorations(valuationsModel);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();

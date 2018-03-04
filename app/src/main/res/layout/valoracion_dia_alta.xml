@@ -15,6 +15,177 @@
     >
 
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="sans-serif"
+        android:text="Hay muchas cosas en nuestra vida, ya sean grandes o pequeñas por las que estar agradecido. Piensa en los acontecimientos de este día y escribe en las líneas siguientes hasta cinco cosas que agradecer del día de hoy."
+        android:textAlignment="viewStart"
+        android:textColor="#696969"
+        android:textSize="12dp"
+        />
+
+
+    <!-- Valoración 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/blanco"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="1."
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp"
+            />
+
+        <EditText
+            android:id="@+id/valoracion_dia_texto1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:background="@color/colorValoracionDia"
+            android:paddingRight="10dp"/>
+
+    </LinearLayout>
+
+
+
+    <!-- Valoración 2 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/blanco"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="2."
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp"
+            />
+
+        <EditText
+            android:id="@+id/valoracion_dia_texto2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:background="@color/colorValoracionDia"
+            android:paddingRight="10dp"/>
+
+    </LinearLayout>
+
+
+    <!-- Valoración 3 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/blanco"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="3."
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp"
+            />
+
+        <EditText
+            android:id="@+id/valoracion_dia_texto3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:background="@color/colorValoracionDia"
+            android:paddingRight="10dp"/>
+
+    </LinearLayout>
+
+
+    <!-- Valoración 4 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/blanco"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="4."
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp"
+            />
+
+        <EditText
+            android:id="@+id/valoracion_dia_texto4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:background="@color/colorValoracionDia"
+            android:paddingRight="10dp"/>
+
+    </LinearLayout>
+
+    <!-- Valoración 5 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/blanco"
+        android:layout_margin="5dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="5."
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="12dp"
+            />
+
+        <EditText
+            android:id="@+id/valoracion_dia_texto5"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="text"
+            android:background="@color/colorValoracionDia"
+            android:paddingRight="10dp"/>
+
+    </LinearLayout>
+
+
+
+
+
     <!-- Botón -->
     <TextView
         android:layout_width="wrap_content"

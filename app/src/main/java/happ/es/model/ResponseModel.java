@@ -27,6 +27,9 @@ public class ResponseModel {
     /** The questinçonary active */
     private QuestionaryModel questionaryModel;
 
+    /** The valorations of last week */
+    private List<ValorationModel> valorations;
+
 
 
     /**
@@ -131,4 +134,19 @@ public class ResponseModel {
         this.questionaryModel = questionaryModel;
     }
 
+    /**
+     * Obtiene las valoraciones
+     * @return
+     */
+    public List<ValorationModel> getValorations() {
+        return valorations;
+    }
+
+    /**
+     * Establece las valoraciones
+     * @param valorations
+     */
+    public void setValorations(List<ValorationModel> valorations) {
+        this.valorations = valorations;
+    }
 }

@@ -87,7 +87,19 @@ public class HappService {
         return model;
     }
 
-
+    public ResponseModel getListValorationsLastWeek(String id, String dd, String mm, String yyyy) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+            String peticion = URL_BASE + "/happ/valuation/list"
+                                       + "/" + dd
+                                       + "/" + mm
+                                       + "/" + yyyy
+                                       + "?id=" + id;
+            String response = hacerPeticion(peticion);
+            model = new HappResponseWrapper().toModel(response);
+        }
+        return model;
+    }
 
     private String search (String id) {
         StringBuffer salida = new StringBuffer();
@@ -112,6 +124,7 @@ public class HappService {
                                    + "&codeEducationLevel=" + codeEducationLevel;
         return hacerPeticion(peticion);
     }
+
 
 
     private String hacerPeticion (String peticion) {
