@@ -17,9 +17,7 @@ import happ.es.types.TypeResponse;
 import happ.es.wrapper.HappResponseWrapper;
 
 
-public class HappService {
-
-    private static final String URL_BASE = "http://192.168.1.41:8080";
+public class HappService extends HappServiceComun {
 
     public ResponseModel conectar(String id) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
@@ -87,7 +85,7 @@ public class HappService {
         return model;
     }
 
-    public ResponseModel getListValorationsLastWeek(String id, String dd, String mm, String yyyy) {
+    public ResponseModel getListValorationsLastWeek(String id, int dd, int mm, int yyyy) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
             String peticion = URL_BASE + "/happ/valuation/list"
@@ -101,54 +99,5 @@ public class HappService {
         return model;
     }
 
-    private String search (String id) {
-        StringBuffer salida = new StringBuffer();
-        String peticion = URL_BASE + "/happ/device/search?id=" + id;
-        return hacerPeticion(peticion);
-
-    }
-
-    private String add (String id) {
-        StringBuffer salida = new StringBuffer();
-        String peticion = URL_BASE + "/happ/device/add?id=" + id;
-        return hacerPeticion(peticion);
-    }
-
-
-    private String update (String id, int age, Gender gender, MaritalStatus maritalStatus, String codeEducationLevel) {
-        StringBuffer salida = new StringBuffer();
-        String peticion = URL_BASE + "/happ/device/update?id=" + id
-                                   + "&age=" + age
-                                   + "&gender=" + gender.name()
-                                   + "&maritalstatus=" + maritalStatus.name()
-                                   + "&codeEducationLevel=" + codeEducationLevel;
-        return hacerPeticion(peticion);
-    }
-
-
-
-    private String hacerPeticion (String peticion) {
-        StringBuffer salida = new StringBuffer();
-        HttpURLConnection urlConnection = null;
-        try {
-
-            URL url = new URL(peticion);
-            urlConnection = (HttpURLConnection) url.openConnection();
-            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-            BufferedReader rd = new BufferedReader(new InputStreamReader(in));
-            String line = "";
-            while ((line = rd.readLine()) != null) {
-                salida.append(line);
-            }
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (urlConnection != null) {
-                urlConnection.disconnect();
-            }
-        }
-        return salida.toString();
-    }
 
 }

@@ -26,6 +26,7 @@ import happ.es.model.ValorationsLastWeekModel;
 import happ.es.services.HappService;
 import happ.es.types.NavValoracionDia;
 import happ.es.util.ConstantesValoracionDia;
+import happ.es.util.DateUtil;
 
 public class ValoracionDiaActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -216,10 +217,12 @@ public class ValoracionDiaActivity extends AppCompatActivity
     }
 
     private void prepararListaValoraicones() {
-        valorationsLastWeekModel = new ValorationsLastWeekModel(new Timestamp(0));
+        DateUtil dateUtil = new DateUtil();
+        Timestamp now = dateUtil.now();
+        valorationsLastWeekModel = new ValorationsLastWeekModel(dateUtil.now());
 
         // DIA 0
-        ResponseModel response = happService.getListValorationsLastWeek(id, "21", "01", "2018");
+        ResponseModel response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY0, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
             day0Nodatafound.setVisibility(View.GONE);
@@ -238,7 +241,8 @@ public class ValoracionDiaActivity extends AppCompatActivity
         }
 
         // DIA 1
-        response = happService.getListValorationsLastWeek(id, "20", "01", "2018");
+        now = dateUtil.dayAddDay(now, -1);
+        response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY1, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
             day1Nodatafound.setVisibility(View.GONE);
@@ -257,7 +261,8 @@ public class ValoracionDiaActivity extends AppCompatActivity
         }
 
         // DIA 2
-        response = happService.getListValorationsLastWeek(id, "19", "01", "2018");
+        now = dateUtil.dayAddDay(now, -1);
+        response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY2, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
             day2Nodatafound.setVisibility(View.GONE);
@@ -276,7 +281,8 @@ public class ValoracionDiaActivity extends AppCompatActivity
         }
 
         // DIA 3
-        response = happService.getListValorationsLastWeek(id, "18", "01", "2018");
+        now = dateUtil.dayAddDay(now, -1);
+        response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY3, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
             day3Nodatafound.setVisibility(View.GONE);
@@ -296,7 +302,8 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
 
         // DIA 4
-        response = happService.getListValorationsLastWeek(id, "17", "01", "2018");
+        now = dateUtil.dayAddDay(now, -1);
+        response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY4, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
             day4Nodatafound.setVisibility(View.GONE);
@@ -313,7 +320,8 @@ public class ValoracionDiaActivity extends AppCompatActivity
         }
 
         // DIA 5
-        response = happService.getListValorationsLastWeek(id, "16", "01", "2018");
+        now = dateUtil.dayAddDay(now, -1);
+        response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY5, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
             day5Nodatafound.setVisibility(View.GONE);
@@ -330,7 +338,8 @@ public class ValoracionDiaActivity extends AppCompatActivity
         }
 
         // DIA 6
-        response = happService.getListValorationsLastWeek(id, "16", "01", "2018");
+        now = dateUtil.dayAddDay(now, -1);
+        response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY6, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
             day6Nodatafound.setVisibility(View.GONE);
