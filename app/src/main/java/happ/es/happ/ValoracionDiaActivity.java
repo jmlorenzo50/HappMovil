@@ -15,10 +15,13 @@ import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import happ.es.model.ResponseModel;
@@ -133,6 +136,14 @@ public class ValoracionDiaActivity extends AppCompatActivity
     }
 
     public void irValoracionInstrucciones(View view) {
+        SeekBar bienestar = (SeekBar) findViewById(R.id.bienestar);
+        SeekBar malestar = (SeekBar) findViewById(R.id.malestar);
+
+        int bienestar_value = bienestar.getProgress();
+        int malestar_value = malestar.getProgress();
+
+        happService.wellness(id, bienestar_value, malestar_value);
+
         Intent intent = new Intent(this, ValoracionDiaActivity.class);
         intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.INSTRUCCIONES.name());
         finish();
@@ -147,7 +158,21 @@ public class ValoracionDiaActivity extends AppCompatActivity
     }
 
     public void darAlta(View view) {
-        // Guardar datos
+        EditText valoracion_dia_texto1 = (EditText) findViewById(R.id.valoracion_dia_texto1);
+        EditText valoracion_dia_texto2 = (EditText) findViewById(R.id.valoracion_dia_texto2);
+        EditText valoracion_dia_texto3 = (EditText) findViewById(R.id.valoracion_dia_texto3);
+        EditText valoracion_dia_texto4 = (EditText) findViewById(R.id.valoracion_dia_texto4);
+        EditText valoracion_dia_texto5 = (EditText) findViewById(R.id.valoracion_dia_texto5);
+
+        List listaValues = new ArrayList();
+        listaValues.add(valoracion_dia_texto1.getText().toString());
+        listaValues.add(valoracion_dia_texto2.getText().toString());
+        listaValues.add(valoracion_dia_texto3.getText().toString());
+        listaValues.add(valoracion_dia_texto4.getText().toString());
+        listaValues.add(valoracion_dia_texto5.getText().toString());
+
+        happService.valuationAdd(id, listaValues);
+
         finish();
     }
 

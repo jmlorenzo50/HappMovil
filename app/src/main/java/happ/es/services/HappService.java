@@ -1,11 +1,14 @@
 package happ.es.services;
 
+import android.util.Base64;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import happ.es.model.QuestionModel;
@@ -99,5 +102,45 @@ public class HappService extends HappServiceComun {
         return model;
     }
 
+
+    public void wellness(String id, int valueGood, int valueBad) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+            String peticion = URL_BASE + "/happ/valuation/wellness"
+                    + "/" + valueGood
+                    + "/" + valueBad
+                    + "?id=" + id;
+            String response = hacerPeticion(peticion);
+            model = new HappResponseWrapper().toModel(response);
+            if (model.getTypeResponse() != TypeResponse.ERROR) {
+
+            }
+        }
+    }
+
+
+    public void valuationAdd(String id, List<String> listaValues ) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+
+            for (String text : listaValues) {
+
+                if (text != null && text.trim().length() > 0) {
+
+                    byte[] data = text.getBytes(StandardCharsets.UTF_8);
+                    String base64 = Base64.encodeToString(data, Base64.DEFAULT);
+
+                    String peticion = URL_BASE + "/happ/valuation/add"
+                            + "?id=" + id
+                            + "&text=" + base64;
+                    String response = hacerPeticion(peticion);
+                    model = new HappResponseWrapper().toModel(response);
+                    if (model.getTypeResponse() != TypeResponse.ERROR) {
+
+                    }
+                }
+            }
+        }
+    }
 
 }
