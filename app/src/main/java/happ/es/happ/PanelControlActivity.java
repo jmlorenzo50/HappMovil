@@ -108,8 +108,8 @@ public class PanelControlActivity extends AppCompatActivity
 
 
     public void irActosBondad(View view) {
-        Intent intent = new Intent(this, ActosBodadActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, ActosBodadActivity.class);
+        startActivity(intent);*/
     }
 
 
