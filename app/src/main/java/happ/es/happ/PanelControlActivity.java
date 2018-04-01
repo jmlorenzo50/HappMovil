@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import happ.es.types.NavValoracionDia;
+import happ.es.types.ParamIntent;
 import happ.es.util.ConstantesValoracionDia;
 
 public class PanelControlActivity extends AppCompatActivity
@@ -94,7 +95,7 @@ public class PanelControlActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-
+            irConfiguracion();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -104,6 +105,12 @@ public class PanelControlActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void irConfiguracion() {
+        Intent intent = new Intent(this, DeviceActivity.class);
+        intent.putExtra(ParamIntent.VALIDAR_EXISTEN_DATOS.name(), false);
+        startActivity(intent);
     }
 
 
