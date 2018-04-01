@@ -11,7 +11,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +27,8 @@ import happ.es.model.ResponseModel;
 import happ.es.model.ValorationsLastWeekModel;
 import happ.es.services.HappService;
 import happ.es.types.NavValoracionDia;
+import happ.es.types.ParamIntent;
+import happ.es.util.AcercaDe;
 import happ.es.util.ConstantesValoracionDia;
 import happ.es.util.DateUtil;
 
@@ -75,7 +76,11 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
         // SERVICIO
         happService = new HappService();
         id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -120,10 +125,10 @@ public class ValoracionDiaActivity extends AppCompatActivity
         } else if (navegacion == NavValoracionDia.ALTA) {
             realizarValoracion.setVisibility(View.VISIBLE);
         }
-
     }
 
-/*    public void irValoracionMenu(View view) {
+
+    /*    public void irValoracionMenu(View view) {
         Intent intent = new Intent(this, ValoracionDiaActivity.class);
         intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.MENU.name());
         startActivity(intent);
@@ -224,7 +229,7 @@ public class ValoracionDiaActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-
+            irConfiguracion();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -238,8 +243,14 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
     public void irConfiguracion() {
         Intent intent = new Intent(this, DeviceActivity.class);
+        intent.putExtra(ParamIntent.VALIDAR_EXISTEN_DATOS.name(), false);
         startActivity(intent);
     }
+
+    public void mostrarAcercaDe(MenuItem item) {
+        //AcercaDe.mostrarAcercaDe(this);
+    }
+
 
     private void prepararListaValoraicones() {
         DateUtil dateUtil = new DateUtil();
@@ -390,6 +401,7 @@ public class ValoracionDiaActivity extends AppCompatActivity
             textView.setVisibility(View.GONE);
         }
     }
+
 
 
 }

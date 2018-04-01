@@ -24,6 +24,9 @@
     <color name="panelControlRosaOn">#e98b6a</color>
     <color name="panelControlRosaOff">#8b8b8b</color>
 
+    <color name="menuSideNavBarColor1">#f1d401</color>
+    <color name="menuSideNavBarColor2">#736500</color>
+    <color name="menuSideNavBarColor3">#ffffff</color>
 
     <color name="colorTitulo">#656565</color>
 

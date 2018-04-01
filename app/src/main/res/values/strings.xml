@@ -42,7 +42,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Configuración</string>
+    <string name="action_settings">Acerca de ...</string>
     <string name="sexo">Sexo:</string>
     <string name="edad">Edad:</string>
     <string name="estadoCivil">Estado civil:</string>
