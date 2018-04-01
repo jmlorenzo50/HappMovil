@@ -9,7 +9,7 @@
     <string name="menu_icono_2">Mis logros</string>
     <string name="menu_icono_3">Momentos</string>
     <string name="menu_icono_4">Objetivos</string>
-    <string name="menu_icono_5">Valoración del día</string>
+    <string name="menu_icono_5">Agradecimiento</string>
     <string name="menu_icono_6">Salvavidas</string>
 
 
@@ -19,11 +19,11 @@
     <string name="actos_bondad_cita_04">1. Desde happ! recomendamos realizar de 3 a 5 actos de bondad al día, para notar resultados.</string>
     <string name="actos_bondad_cita_05">2. Recuerda que la variedad es la clave, sorpréndenos añadiendo cualquier acto que se te ocurra.</string>
 
-    <string name="valoracion_dia_cita_01">\"Mucha gente pequeña, en lugares pequeños, haciendo cosas pequeñas, puede cambiar el mundo\"</string>
-    <string name="valoracion_dia_cita_02">Varios estudios muestran que ayudar a otros nos distrae de nuestros pensamientos y problemas. En un estudio del 2015 se encontró que realizar pequeños actos de bondad nos ayuda a lidiar con nuestro propio estrés y nos hace sentir mejor.</string>
-    <string name="valoracion_dia_cita_03">Los estudios muestran también que realizar actos de bondad regularmente nos hace felices durante bastante tiempo, pero la clave es la variedad en estos actos.</string>
-    <string name="valoracion_dia_cita_04">1. Desde happ! recomendamos realizar de 3 a 5 actos de bondad al día, para notar resultados.</string>
-    <string name="valoracion_dia_cita_05">2. Recuerda que la variedad es la clave, sorpréndenos añadiendo cualquier acto que se te ocurra.</string>
+    <string name="valoracion_dia_cita_01">\"Seras feliz, me dijo la vida, pero primero te haré fuerte\"</string>
+    <string name="valoracion_dia_cita_02">Varios estudios muestran que ser agradecidos nos hace mas felices.</string>
+    <string name="valoracion_dia_cita_03">Los estudios muestran también que ser agradecidos blabla.</string>
+    <string name="valoracion_dia_cita_04">1. Desde happ! recomendamos realizar esta actividad todos los días durante una semana.</string>
+    <string name="valoracion_dia_cita_05">2. Recuerda que la variedad es la clave.</string>
     <string name="valoracion_dia_hoy">Hoy</string>
     <string name="valoracion_dia_ayer">Ayer</string>
     <string name="valoracion_dia_sin_datos">Todavía no has escrito tu valoración del día</string>
@@ -33,11 +33,11 @@
     <string name="empezar_ahora">EMPEZAR AHORA</string>
     <string name="realizar_ahora">REALIZAR AHORA</string>
     <string name="no_mostrar_texto">No volver a mostrar este texto</string>
-    <string name="eduardo_galeano">Eduardo Galeano</string>
+    <string name="eduardo_galeano">Anónimo</string>
 
     <string name="title_activity_panel_control"></string>
     <string name="title_activity_actos_bondad">Actos de bondad</string>
-    <string name="title_activity_valoracion_dia">Valoración del día</string>
+    <string name="title_activity_valoracion_dia">Agradecimiento</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -65,6 +65,7 @@
     <string name="paginador_cuestinario">Página %1$d de %2$d</string>
 
     <string name="pregunta_cuestinario">%1$s</string>
+
 
 </resources>
 

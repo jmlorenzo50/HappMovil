@@ -37,6 +37,7 @@ public class PlaceholderFragment extends Fragment {
     private static final String ARG_TOTAL_SECTION_NUMBER = "total_section_number";
 
     private static final String ARG_PREGUNTA = "pregunta";
+    private static final String ARG_DESCRIPCIONMARTA = "descriptionmarta";
 
     private static QuestionaryModel questionary;
 
@@ -62,6 +63,7 @@ public class PlaceholderFragment extends Fragment {
         PlaceholderFragment.questionary = questionary;
         PlaceholderFragment.questionaryActivity = questionaryActivity;
 
+
         PlaceholderFragment fragment = new PlaceholderFragment();
 
         Bundle args = new Bundle();
@@ -70,8 +72,11 @@ public class PlaceholderFragment extends Fragment {
 
         QuestionModel q = (QuestionModel) questionary.getQuestions().toArray()[sectionNumber-1];
         args.putString(ARG_PREGUNTA, q.getStatement());
+        args.putString(ARG_DESCRIPCIONMARTA, questionary.getDescription());
+
         fragment.setArguments(args);
         fragment.setQuestion(q);
+
 
         return fragment;
     }
@@ -87,6 +92,11 @@ public class PlaceholderFragment extends Fragment {
 
         TextView textViewPregunta = (TextView) rootView.findViewById(R.id.pregunta);
         textViewPregunta.setText(getString(R.string.pregunta_cuestinario, getArguments().getString(ARG_PREGUNTA)));
+
+
+
+        TextView textViewDescripcion = (TextView) rootView.findViewById(R.id.descriptionmarta);
+        textViewDescripcion.setText(getArguments().getString(ARG_DESCRIPCIONMARTA));
 
         // Inicializar los botones
         LinearLayout btnsContainer = (LinearLayout)rootView.findViewById(R.id.btnContainer);
@@ -133,6 +143,9 @@ public class PlaceholderFragment extends Fragment {
     }
 
     public void setQuestion(QuestionModel question) {
+        this.question = question;
+    }
+    public void setDescription(QuestionModel question) {
         this.question = question;
     }
 }
