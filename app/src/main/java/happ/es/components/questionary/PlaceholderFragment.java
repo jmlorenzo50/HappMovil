@@ -38,6 +38,7 @@ public class PlaceholderFragment extends Fragment {
 
     private static final String ARG_PREGUNTA = "pregunta";
     private static final String ARG_DESCRIPCIONMARTA = "descriptionmarta";
+    private static final String ARG_STATEMENT = "statement";
 
     private static QuestionaryModel questionary;
 
@@ -73,6 +74,8 @@ public class PlaceholderFragment extends Fragment {
         QuestionModel q = (QuestionModel) questionary.getQuestions().toArray()[sectionNumber-1];
         args.putString(ARG_PREGUNTA, q.getStatement());
         args.putString(ARG_DESCRIPCIONMARTA, questionary.getDescription());
+        args.putString(ARG_STATEMENT, questionary.getStatement());
+
 
         fragment.setArguments(args);
         fragment.setQuestion(q);
@@ -93,7 +96,8 @@ public class PlaceholderFragment extends Fragment {
         TextView textViewPregunta = (TextView) rootView.findViewById(R.id.pregunta);
         textViewPregunta.setText(getString(R.string.pregunta_cuestinario, getArguments().getString(ARG_PREGUNTA)));
 
-
+        TextView textViewStatement= (TextView) rootView.findViewById(R.id.statement);
+        textViewPregunta.setText(getArguments().getString(ARG_STATEMENT));
 
         TextView textViewDescripcion = (TextView) rootView.findViewById(R.id.descriptionmarta);
         textViewDescripcion.setText(getArguments().getString(ARG_DESCRIPCIONMARTA));
