@@ -42,10 +42,20 @@ public class DeviceActivity extends AppCompatActivity {
 
     private String id;
 
+    private List<EducationLevelModel> elvs;
+
+    private EducationLevelModel elv;
+
+    private int position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_device);
+
+        // Declaración de componentes
+        age = -1;
+        selectedMan = true;
 
         // Inicialización de los componentes gráficos
         selectedMan = true;
@@ -60,21 +70,23 @@ public class DeviceActivity extends AppCompatActivity {
 
         cmbEducationLevel = (Spinner) findViewById(R.id.educationLevel);
 
+        txtAge = (EditText)findViewById(R.id.age);
 
         // Inicialización de las variables lógicas
         id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         happService = new HappService();
-        validarExistenDatos();
 
         // Obtención del os niveles educativos para la recarga del combo
         ResponseModel response = happService.getAllEducationLevels(id);
-        List<EducationLevelModel> elvs = response.getEducationLevels();
+        elvs = response.getEducationLevels();
 
         ArrayAdapter<EducationLevelModel> adapter = new ArrayAdapter<EducationLevelModel>(getApplicationContext(),
                 android.R.layout.simple_spinner_item, elvs);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cmbEducationLevel.setAdapter(adapter);
 
+        // Operativa de validación de datos
+        validarExistenDatos();
     }
 
 
@@ -88,6 +100,72 @@ public class DeviceActivity extends AppCompatActivity {
                 finish();
                 startActivity(intent);
             }
+        } else {
+            ResponseModel device = happService.conectar(id);
+            if (device != null && device.getDeviceModel() != null) {
+                age =device.getDeviceModel().getAge();
+                selectedMan = (device.getDeviceModel().getGender() == Gender.MAN);
+                maritalStatus = device.getDeviceModel().getMartialStatus();
+
+                String code =  device.getDeviceModel().getEducationLevelCode();
+                elv = null;
+                this.position = 0;
+                if (elvs != null) {
+                    for (int p = 0; p < elvs.size(); p++) {
+                        EducationLevelModel educationLevel = elvs.get(p);
+                        if (educationLevel.getCode().equals(code)) {
+                            elv = educationLevel;
+                            this.position = p;
+                        }
+                    }
+                }
+
+            }
+            pintarEstado();
+        }
+
+    }
+
+    public void pintarEstado() {
+
+        if (age >0) {
+            txtAge.setText("" + age);
+        }
+
+        if (selectedMan) {
+            btnMan.setImageResource(R.drawable.happ_man_on);
+            btnWoman.setImageResource(R.drawable.happ_woman_off);
+        } else {
+            btnMan.setImageResource(R.drawable.happ_man_off);
+            btnWoman.setImageResource(R.drawable.happ_woman_on);
+        }
+
+        if (maritalStatus == MaritalStatus.SINGLE) {
+            btnState1.setImageResource(R.drawable.estado_civil_1_on);
+            btnState2.setImageResource(R.drawable.estado_civil_2_off);
+            btnState3.setImageResource(R.drawable.estado_civil_3_off);
+            btnState4.setImageResource(R.drawable.estado_civil_4_off);
+        } else if (maritalStatus == MaritalStatus.MARRIED) {
+            btnState1.setImageResource(R.drawable.estado_civil_1_off);
+            btnState2.setImageResource(R.drawable.estado_civil_2_on);
+            btnState3.setImageResource(R.drawable.estado_civil_3_off);
+            btnState4.setImageResource(R.drawable.estado_civil_4_off);
+        } else if (maritalStatus == MaritalStatus.DIVORCED) {
+            btnState1.setImageResource(R.drawable.estado_civil_1_off);
+            btnState2.setImageResource(R.drawable.estado_civil_2_off);
+            btnState3.setImageResource(R.drawable.estado_civil_3_on);
+            btnState4.setImageResource(R.drawable.estado_civil_4_off);
+
+        } else if (maritalStatus == MaritalStatus.WIDOWED) {
+            btnState1.setImageResource(R.drawable.estado_civil_1_off);
+            btnState2.setImageResource(R.drawable.estado_civil_2_off);
+            btnState3.setImageResource(R.drawable.estado_civil_3_off);
+            btnState4.setImageResource(R.drawable.estado_civil_4_on);
+        }
+
+
+        if (elv != null) {
+            cmbEducationLevel.setSelection(position);
         }
 
     }
@@ -95,7 +173,6 @@ public class DeviceActivity extends AppCompatActivity {
 
     public void continuar(View view) {
 
-        txtAge = (EditText)findViewById(R.id.age);
 
         if (txtAge.getText().toString() != null && txtAge.getText().toString().trim().length() > 0) {
             age = Integer.parseInt(txtAge.getText().toString().trim());
@@ -132,53 +209,33 @@ public class DeviceActivity extends AppCompatActivity {
     public void selectedMan(View view) {
         if (!selectedMan) {
             selectedMan = true;
-            btnMan.setImageResource(R.drawable.happ_man_on);
-            btnWoman.setImageResource(R.drawable.happ_woman_off);
-        }
+            pintarEstado();        }
     }
 
     public void selectedWoman(View view) {
         if (selectedMan) {
             selectedMan = false;
-            btnMan.setImageResource(R.drawable.happ_man_off);
-            btnWoman.setImageResource(R.drawable.happ_woman_on);
-        }
+            pintarEstado();        }
     }
 
 
     public void selectedState1(View view) {
-        btnState1.setImageResource(R.drawable.estado_civil_1_on);
-        btnState2.setImageResource(R.drawable.estado_civil_2_off);
-        btnState3.setImageResource(R.drawable.estado_civil_3_off);
-        btnState4.setImageResource(R.drawable.estado_civil_4_off);
-
         maritalStatus = MaritalStatus.SINGLE;
+        pintarEstado();
     }
 
     public void selectedState2(View view) {
-        btnState1.setImageResource(R.drawable.estado_civil_1_off);
-        btnState2.setImageResource(R.drawable.estado_civil_2_on);
-        btnState3.setImageResource(R.drawable.estado_civil_3_off);
-        btnState4.setImageResource(R.drawable.estado_civil_4_off);
-
         maritalStatus = MaritalStatus.MARRIED;
+        pintarEstado();
     }
 
     public void selectedState3(View view) {
-        btnState1.setImageResource(R.drawable.estado_civil_1_off);
-        btnState2.setImageResource(R.drawable.estado_civil_2_off);
-        btnState3.setImageResource(R.drawable.estado_civil_3_on);
-        btnState4.setImageResource(R.drawable.estado_civil_4_off);
-
         maritalStatus = MaritalStatus.DIVORCED;
+        pintarEstado();
     }
 
     public void selectedState4(View view) {
-        btnState1.setImageResource(R.drawable.estado_civil_1_off);
-        btnState2.setImageResource(R.drawable.estado_civil_2_off);
-        btnState3.setImageResource(R.drawable.estado_civil_3_off);
-        btnState4.setImageResource(R.drawable.estado_civil_4_on);
-
         maritalStatus = MaritalStatus.WIDOWED;
+        pintarEstado();
     }
 }

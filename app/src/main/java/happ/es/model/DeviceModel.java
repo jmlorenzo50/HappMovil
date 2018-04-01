@@ -1,6 +1,7 @@
 package happ.es.model;
 
 import happ.es.types.Gender;
+import happ.es.types.MaritalStatus;
 
 /**
  * The Class DeviceModel.
@@ -15,6 +16,14 @@ public class DeviceModel {
 
 	/** The age */
 	private Integer age;
+
+	/** The martial status */
+	private MaritalStatus martialStatus;
+
+	/** The education level code */
+	private String educationLevelCode;
+
+
 
 
 	/**
@@ -89,5 +98,35 @@ public class DeviceModel {
 		this.age = age;
 	}
 
+	/**
+	 *
+	 * @return
+	 */
+	public MaritalStatus getMartialStatus() {
+		return martialStatus;
+	}
 
+	/**
+	 *
+	 * @param martialStatus
+	 */
+	public void setMartialStatus(MaritalStatus martialStatus) {
+		this.martialStatus = martialStatus;
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public String getEducationLevelCode() {
+		return educationLevelCode;
+	}
+
+	/**
+	 *
+	 * @param educationLevelCode
+	 */
+	public void setEducationLevelCode(String educationLevelCode) {
+		this.educationLevelCode = educationLevelCode;
+	}
 }

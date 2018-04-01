@@ -19,6 +19,7 @@ import happ.es.model.ResponseModel;
 import happ.es.model.SessionQuestionaryModel;
 import happ.es.model.ValorationModel;
 import happ.es.types.Gender;
+import happ.es.types.MaritalStatus;
 import happ.es.types.TypeResponse;
 
 /**
@@ -44,6 +45,10 @@ public class HappResponseWrapper {
                 device.setAndroidId(deviceModel.getString("androidId"));
                 device.setGender(Gender.valueOf(deviceModel.getString("gender")));
                 device.setAge(deviceModel.getInt("age"));
+                device.setMartialStatus(MaritalStatus.valueOf(deviceModel.getString("maritalStatus")));
+
+                JSONObject educationLevel = deviceModel.getJSONObject("educationLevelModel");
+                device.setEducationLevelCode(educationLevel.getString("code"));
                 model.setDeviceModel(device);
             }
 
