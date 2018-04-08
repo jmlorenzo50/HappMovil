@@ -95,10 +95,11 @@ public class DeviceActivity extends AppCompatActivity {
         if (extras.getBoolean(ParamIntent.VALIDAR_EXISTEN_DATOS.name())) {
             ResponseModel device = happService.conectar(id);
 
-            if (device.getDeviceModel().getAge() > 0) {
-                Intent intent = new Intent(this, PanelControlActivity.class);
+            if (device != null && device.getDeviceModel()!= null && device.getDeviceModel().getAge() > 0) {
+                SessionsForAnswerUtil.test(id, happService, this);
+                /*Intent intent = new Intent(this, PanelControlActivity.class);
                 finish();
-                startActivity(intent);
+                startActivity(intent);*/
             }
         } else {
             ResponseModel device = happService.conectar(id);
@@ -121,9 +122,8 @@ public class DeviceActivity extends AppCompatActivity {
                 }
 
             }
-            pintarEstado();
         }
-
+        pintarEstado();
     }
 
     public void pintarEstado() {

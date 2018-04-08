@@ -3,7 +3,17 @@
 
     <string name="cargando">Cargando...</string>
     <string name="continuar">Continuar</string>
+    <string name="aceptar">Aceptar</string>
 
+    <string name="estudio_titulo">ESTUDIO TÍTULO</string>
+    <string name="estudio_texto_01">El objetivo de este documento es informarte sobre el estudio de investigación que estamos realizando, aprobado por la Comisión Deontológica de la Facultad de Psicología, en el que te invitamos a participar. Nuestra intención en que recibas la información correcta y suficiente para que puedas decidir si deseas participar. Tu participación es totalmente voluntaria, puedes decidir no participar, o cambiar tu decisión y retirarte durante el estudio.</string>
+    <string name="estudio_texto_02">¿Por qué hacemos este estudio? Deseamos desarrollar un programa de promoción del bienestar personal en población general basado en los fundamentos de la Psicología Positiva  a través de las nuevas tecnologías y evaluar su eficacia.</string>
+    <string name="estudio_texto_03">¿Qué te pedimos que hagas? El programa consiste en realizar durante una semana ciertas actividades a través de una aplicación en tu  smartphone llamada Happ, dirigidas a mejorar tu  bienestar psicológico. Estas actividades derivan de la investigación entre otros de Sonja Lyubomisrky y, a modo de ejemplo, una actividad podría ser una lista de agradecimiento en la cual pienses y escribas varias cosas por las que te sientas agradecido, una actividad de actos de bondad, donde se te alentará a realizar un acto de bondad hacia otra persona, etc. Una vez aceptes este compromiso serás enlazado a la url para bajarte la aplicación.Ten en cuenta que al tratarse de un estudio de investigación, también podrías formar parte de un grupo control, en el cual también realizarás ciertas actividades, pero estas no esperamos que deriven directamente en una mejora de tu biestar psicológico.</string>
+    <string name="estudio_texto_04">Además tendrás que contestar a unos breves cuestionarios sobre emociones positivas y bienestar al inicio y al final del estudio.</string>
+    <string name="estudio_texto_05">¿Cómo se protegerá tu intimidad? En todo momento garantizaremos la seguridad y confidencialidad de los resultados obtenidos en el estudio. Las respuestas a los cuestionarios serán anónimas, asignando un código numérico a cada participante que protegerá su identidad. Solo los investigadores del estudio tendremos acceso a dichos datos codificados. La app no registrará datos del usuario del mismo ni solicitará permisos para acceder a sus contenidos o a otras aplicaciones.</string>
+    <string name="estudio_texto_06">¿Tienes alguna duda? Estaremos encantados de aclararla a través del correo electrónico de contacto (mgil07@ucm.es).</string>
+    <string name="estudio_texto_07"></string>
+    <string name="estudio_texto_08"></string>
 
     <string name="menu_icono_1">Actos de bondad</string>
     <string name="menu_icono_2">Mis logros</string>
@@ -27,6 +37,7 @@
     <string name="valoracion_dia_hoy">Hoy</string>
     <string name="valoracion_dia_ayer">Ayer</string>
     <string name="valoracion_dia_sin_datos">Todavía no has escrito tu valoración del día</string>
+
 
 
     <string name="instrucciones">Instrucciones</string>

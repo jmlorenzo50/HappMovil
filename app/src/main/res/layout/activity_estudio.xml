@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="happ.es.happ.EstudioActivity">
+
+
+    <!-- Contenido -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp">
+
+
+        <TextView
+            android:id="@+id/estudio_titulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estudio_titulo" />
+
+        <ScrollView
+            android:layout_width="147dp"
+            android:layout_height="551dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/estudio_texto_01"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/instrucciones_color"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/estudio_texto_02"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/instrucciones_color"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/estudio_texto_03"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/instrucciones_color"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/estudio_texto_04"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/instrucciones_color"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/estudio_texto_05"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/instrucciones_color"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/estudio_texto_06"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/instrucciones_color"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/estudio_texto_07"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/instrucciones_color"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/estudio_texto_08"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/instrucciones_color"
+                    android:textSize="12dp" />
+
+                <!-- Botón -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/aceptar"
+                    android:textAlignment="center"
+                    android:textColor="@color/blanco"
+                    android:textSize="12dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="@drawable/boton_largo_verde"
+                    android:onClick="btnAceptar"/>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

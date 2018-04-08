@@ -34,4 +34,6 @@
 
     <color name="blanco">#FFFFFF</color>
 
+    <color name="instrucciones_color">#696969</color>
+
 </resources>
