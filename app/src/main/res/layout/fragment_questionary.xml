@@ -10,14 +10,10 @@
     android:orientation="vertical"
     android:background="#FFFFFF"
     tools:context="happ.es.components.questionary.PlaceholderFragment">
-
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:paddingBottom="20dp"/>
-
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,11 +30,19 @@
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:id="@+id/descriptionmarta"
-            android:layout_gravity="center_vertical|left"
             android:paddingLeft="10dp"
+            android:paddingRight="75dp"
                     />
-
+        <TextView
+            android:id="@+id/section_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:paddingBottom="20dp"/>
             </LinearLayout>
+
+</LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"

@@ -94,10 +94,10 @@ public class PlaceholderFragment extends Fragment {
                                    getArguments().getInt(ARG_TOTAL_SECTION_NUMBER)));
 
         TextView textViewPregunta = (TextView) rootView.findViewById(R.id.pregunta);
-        textViewPregunta.setText(getString(R.string.pregunta_cuestinario, getArguments().getString(ARG_PREGUNTA)));
+        textViewPregunta.setText(getArguments().getString(ARG_PREGUNTA));
 
         TextView textViewStatement= (TextView) rootView.findViewById(R.id.statement);
-        textViewPregunta.setText(getArguments().getString(ARG_STATEMENT));
+        textViewStatement.setText(getArguments().getString(ARG_STATEMENT));
 
         TextView textViewDescripcion = (TextView) rootView.findViewById(R.id.descriptionmarta);
         textViewDescripcion.setText(getArguments().getString(ARG_DESCRIPCIONMARTA));
