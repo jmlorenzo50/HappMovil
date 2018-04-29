@@ -39,9 +39,9 @@ public class QuestionaryOnClickListener implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         for (int i=0; i<btnAnswers.size(); i++) {
-            btnAnswers.get(i).setBackgroundResource(R.drawable.boton_largo_pistacho);
+            btnAnswers.get(i).setBackgroundResource(R.drawable.boton_largo_verde2);
         }
-        btnAnswers.get(activar).setBackgroundResource(R.drawable.boton_largo_verde);
+        btnAnswers.get(activar).setBackgroundResource(R.drawable.boton_largo_verde2);
         question.setAnswerSelected(answer);
 
         questionaryActivity.siguiente();
