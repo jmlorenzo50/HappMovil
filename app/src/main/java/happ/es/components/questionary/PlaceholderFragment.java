@@ -117,9 +117,9 @@ public class PlaceholderFragment extends Fragment {
             btnAnswer.setText(answer.getText());
             btnAnswer.setTag(i);
             if (question.getAnswerSelected() != null && answer == question.getAnswerSelected()) {
-                btnAnswer.setBackgroundResource(R.drawable.boton_largo_verde);
+                btnAnswer.setBackgroundResource(R.drawable.boton_largo_verde2);
             } else {
-                btnAnswer.setBackgroundResource(R.drawable.boton_largo_pistacho);
+                btnAnswer.setBackgroundResource(R.drawable.boton_largo2_amarillo);
             }
 
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);

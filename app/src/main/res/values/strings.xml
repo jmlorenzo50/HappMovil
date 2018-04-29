@@ -15,12 +15,12 @@
     <string name="estudio_texto_07"></string>
     <string name="estudio_texto_08"></string>
 
-    <string name="menu_icono_1">Actos de bondad</string>
-    <string name="menu_icono_2">Mis logros</string>
-    <string name="menu_icono_3">Momentos</string>
-    <string name="menu_icono_4">Objetivos</string>
-    <string name="menu_icono_5">Agradecimiento</string>
-    <string name="menu_icono_6">Salvavidas</string>
+    <string name="menu_icono_1"></string>
+    <string name="menu_icono_2"></string>
+    <string name="menu_icono_3"></string>
+    <string name="menu_icono_4"></string>
+    <string name="menu_icono_5">Empezar Actividad</string>
+    <string name="menu_icono_6"></string>
 
 
     <string name="actos_bondad_cita_01">\"Mucha gente pequeña, en lugares pequeños, haciendo cosas pequeñas, puede cambiar el mundo\"</string>
@@ -29,11 +29,11 @@
     <string name="actos_bondad_cita_04">1. Desde happ! recomendamos realizar de 3 a 5 actos de bondad al día, para notar resultados.</string>
     <string name="actos_bondad_cita_05">2. Recuerda que la variedad es la clave, sorpréndenos añadiendo cualquier acto que se te ocurra.</string>
 
-    <string name="valoracion_dia_cita_01">\"Seras feliz, me dijo la vida, pero primero te haré fuerte\"</string>
-    <string name="valoracion_dia_cita_02">Varios estudios muestran que ser agradecidos nos hace mas felices.</string>
-    <string name="valoracion_dia_cita_03">Los estudios muestran también que ser agradecidos blabla.</string>
-    <string name="valoracion_dia_cita_04">1. Desde happ! recomendamos realizar esta actividad todos los días durante una semana.</string>
-    <string name="valoracion_dia_cita_05">2. Recuerda que la variedad es la clave.</string>
+    <string name="valoracion_dia_cita_01">\"Everything is a present (todo es un regalo)\"</string>
+    <string name="valoracion_dia_cita_02">A continuación te vamos a proponer una actividad que sabemos que tendrá un efecto positivo en tu bienestar si la realizas todos los días.</string>
+    <string name="valoracion_dia_cita_03">Esta actividad tendrá una duración de 7 días, una semana completa, sólo 7 días, pero es importante que no te saltes ninguno.Si esto sucediera,no te preocupes sigue al día siguiente, pero recuerda que para que sea efectivo tienes que ser consistente.</string>
+    <string name="valoracion_dia_cita_04">1.Márcate una hora aproximada para acceder a la aplicación. Procura que sea un momento en el que estés tranquilo y puedas dedicar al menos 5 minutos.</string>
+    <string name="valoracion_dia_cita_05">2.Todos los días te llegará un recordatorio. Es fácil y divertido: sigue las instrucciones y recuerda que la variedad es la clave.</string>
     <string name="valoracion_dia_hoy">Hoy</string>
     <string name="valoracion_dia_ayer">Ayer</string>
     <string name="valoracion_dia_sin_datos">Todavía no has escrito tu valoración del día</string>
@@ -42,9 +42,9 @@
 
     <string name="instrucciones">Instrucciones</string>
     <string name="empezar_ahora">EMPEZAR AHORA</string>
-    <string name="realizar_ahora">REALIZAR AHORA</string>
+    <string name="realizar_ahora">REALIZAR</string>
     <string name="no_mostrar_texto">No volver a mostrar este texto</string>
-    <string name="eduardo_galeano">Anónimo</string>
+    <string name="eduardo_galeano">Alice Sommer</string>
 
     <string name="title_activity_panel_control"></string>
     <string name="title_activity_actos_bondad">Actos de bondad</string>

@@ -14,7 +14,7 @@
                 <stroke android:color="@color/colorTitulo" android:width="2dp" />
                 <solid android:color="@color/colorValoracionDia"/>
                 <corners android:radius="10dp"/>
-                <gradient  android:endColor="@color/colorActosBondad" android:startColor="@color/colorValoracionDia" />
+                <gradient  android:endColor="@color/malestar" android:startColor="@color/colorValoracionDia" />
 
             </shape>
 
