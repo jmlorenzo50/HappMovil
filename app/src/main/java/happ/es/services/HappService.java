@@ -42,7 +42,7 @@ public class HappService extends HappServiceComun {
     public ResponseModel getAllEducationLevels(String id) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
-            String peticion = URL_BASE + "/happ/envirotment/educationLevels";
+            String peticion = URL_BASE + "/envirotment/educationLevels";
             String response = hacerPeticion(peticion);
             model = new HappResponseWrapper().toModel(response);
         }
@@ -52,7 +52,7 @@ public class HappService extends HappServiceComun {
     public ResponseModel getSessionsForAnswer(String id) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
-            String peticion = URL_BASE + "/happ/questionary/session/forAnswer?id=" + id;
+            String peticion = URL_BASE + "/questionary/session/forAnswer?id=" + id;
             String response = hacerPeticion(peticion);
             model = new HappResponseWrapper().toModel(response);
         }
@@ -62,7 +62,7 @@ public class HappService extends HappServiceComun {
     public ResponseModel getAllQuestionary(String id) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
-            String peticion = URL_BASE + "/happ/questionary/all";
+            String peticion = URL_BASE + "/questionary/all";
             String response = hacerPeticion(peticion);
             model = new HappResponseWrapper().toModel(response);
         }
@@ -76,7 +76,7 @@ public class HappService extends HappServiceComun {
             List<QuestionModel> questions = questionaryModel.getQuestions();
             for (QuestionModel q: questions) {
                 String peticion = URL_BASE
-                                + "/happ/questionary/session/answer?"
+                                + "/questionary/session/answer?"
                                 + "id=" + id
                                 + "&session=" + sessionId
                                 + "&answer=" + q.getAnswerSelected().getAnswerId();
@@ -91,7 +91,7 @@ public class HappService extends HappServiceComun {
     public ResponseModel getListValorationsLastWeek(String id, int dd, int mm, int yyyy) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
-            String peticion = URL_BASE + "/happ/valuation/list"
+            String peticion = URL_BASE + "/valuation/list"
                                        + "/" + dd
                                        + "/" + mm
                                        + "/" + yyyy
@@ -106,7 +106,7 @@ public class HappService extends HappServiceComun {
     public void wellness(String id, int valueGood, int valueBad) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
-            String peticion = URL_BASE + "/happ/valuation/wellness"
+            String peticion = URL_BASE + "/valuation/wellness"
                     + "/" + valueGood
                     + "/" + valueBad
                     + "?id=" + id;
@@ -130,7 +130,7 @@ public class HappService extends HappServiceComun {
                     byte[] data = text.getBytes(StandardCharsets.UTF_8);
                     String base64 = Base64.encodeToString(data, Base64.DEFAULT);
 
-                    String peticion = URL_BASE + "/happ/valuation/add"
+                    String peticion = URL_BASE + "/valuation/add"
                             + "?id=" + id
                             + "&text=" + base64;
                     String response = hacerPeticion(peticion);
@@ -147,7 +147,7 @@ public class HappService extends HappServiceComun {
     public ResponseModel changeShowVideo(String id, String videoAnswer, Long videoValue) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
         if (model.getTypeResponse() != TypeResponse.ERROR) {
-            String peticion = URL_BASE + "/happ/device/changeShowVideo"
+            String peticion = URL_BASE + "/device/changeShowVideo"
                     + "?id=" + id
                     + "&videoAnswer=" + videoAnswer
                     + "&videoValue=" + videoValue;

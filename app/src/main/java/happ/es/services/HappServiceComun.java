@@ -16,26 +16,27 @@ import happ.es.types.MaritalStatus;
 
 public class HappServiceComun {
 
-    protected static final String URL_BASE = "http://192.168.1.41:8080";
+    //protected static final String URL_BASE = "http://192.168.1.41:8080";
+    protected static final String URL_BASE = "http://139.99.44.79:8080/happ";
 
 
     protected String search (String id) {
         StringBuffer salida = new StringBuffer();
-        String peticion = URL_BASE + "/happ/device/search?id=" + id;
+        String peticion = URL_BASE + "/device/search?id=" + id;
         return hacerPeticion(peticion);
 
     }
 
     protected String add (String id) {
         StringBuffer salida = new StringBuffer();
-        String peticion = URL_BASE + "/happ/device/add?id=" + id;
+        String peticion = URL_BASE + "/device/add?id=" + id;
         return hacerPeticion(peticion);
     }
 
 
     protected String update (String id, int age, Gender gender, MaritalStatus maritalStatus, String codeEducationLevel) {
         StringBuffer salida = new StringBuffer();
-        String peticion = URL_BASE + "/happ/device/update?id=" + id
+        String peticion = URL_BASE + "/device/update?id=" + id
                 + "&age=" + age
                 + "&gender=" + gender.name()
                 + "&maritalstatus=" + maritalStatus.name()

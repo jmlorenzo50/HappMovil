@@ -67,7 +67,8 @@ public class VideoPreActivity extends AppCompatActivity {
 
     public void continuar(View view) {
         this.finish();
-        Intent intent = new Intent(this, VideoPostActivity.class);
+        //Intent intent = new Intent(this, VideoPostActivity.class);
+        Intent intent = new Intent(this, VideoActivity.class);
         startActivity(intent);
     }
 
