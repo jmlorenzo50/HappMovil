@@ -143,4 +143,18 @@ public class HappService extends HappServiceComun {
         }
     }
 
+
+    public ResponseModel changeShowVideo(String id) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+            String peticion = URL_BASE + "/happ/device/changeShowVideo"
+                    + "?id=" + id;
+            String response = hacerPeticion(peticion);
+            model = new HappResponseWrapper().toModel(response);
+        }
+        return model;
+    }
+
+
+
 }

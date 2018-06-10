@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="happ.es.happ.VideoPostActivity"
+    tools:showIn="@layout/activity_video_post">
+
+    <LinearLayout
+        android:id="@+id/preguntas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+
+        <!-- Continuar -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/continuar"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="12dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/boton_largo_valoracion_dia"
+            android:onClick="continuar"  />
+
+
+     </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

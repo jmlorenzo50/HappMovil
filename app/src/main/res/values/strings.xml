@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">happ</string>
 
+    <string name="title_activity_panel_control"></string>
+    <string name="title_activity_actos_bondad">Actos de bondad</string>
+    <string name="title_activity_valoracion_dia">Agradecimiento</string>
+    <string name="title_activity_questionary">Cuestionario</string>
+    <string name="title_activity_video">Video</string>
+    <string name="title_activity_video_pre">Instrucciones del video</string>
+    <string name="title_activity_video_post">Preguntas del video</string>
+
     <string name="cargando">Cargando...</string>
     <string name="continuar">Continuar</string>
     <string name="aceptar">Aceptar</string>
@@ -39,16 +47,13 @@
     <string name="valoracion_dia_sin_datos">Todavía no has escrito tu valoración del día</string>
 
 
-
     <string name="instrucciones">Instrucciones</string>
     <string name="empezar_ahora">EMPEZAR AHORA</string>
     <string name="realizar_ahora">REALIZAR</string>
     <string name="no_mostrar_texto">No volver a mostrar este texto</string>
     <string name="eduardo_galeano">Alice Sommer</string>
 
-    <string name="title_activity_panel_control"></string>
-    <string name="title_activity_actos_bondad">Actos de bondad</string>
-    <string name="title_activity_valoracion_dia">Agradecimiento</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -68,14 +73,12 @@
     <string name="viudo">Viud@</string>
 
     <string name="configuracion">Configuración</string>
-    <string name="title_activity_questionary">Cuestionario</string>
-
-
     <string name="section_format">Hello World from section: %1$d</string>
-
     <string name="paginador_cuestinario">Página %1$d de %2$d</string>
-
     <string name="pregunta_cuestinario">%1$s</string>
+
+    <string name="video_instrucciones_01">A continuación vas a ver un video que dura sólo cinco minutos.</string>
+    <string name="video_instrucciones_02">Es importante que estés atento/a porque al finalizar te vamos a hacer una pregunta sobre el mismo. Si no puedes ver el video ahora, accede a la aplicación cuando puedas hacerlo.</string>
 
 
 </resources>

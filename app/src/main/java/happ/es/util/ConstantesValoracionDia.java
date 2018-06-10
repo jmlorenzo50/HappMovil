@@ -8,5 +8,7 @@ public class ConstantesValoracionDia {
 
     public static String NAVEGACION = "NAVEGACION";
 
+    public static String YES = "S";
+
 
 }

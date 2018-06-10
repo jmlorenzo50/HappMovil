@@ -46,6 +46,8 @@ public class HappResponseWrapper {
                 device.setGender(Gender.valueOf(deviceModel.getString("gender")));
                 device.setAge(deviceModel.getInt("age"));
                 device.setMartialStatus(MaritalStatus.valueOf(deviceModel.getString("maritalStatus")));
+                device.setGroup(deviceModel.getString("group"));
+                device.setVideoView(deviceModel.getString("videoView"));
 
                 JSONObject educationLevel = deviceModel.getJSONObject("educationLevelModel");
                 device.setEducationLevelCode(educationLevel.getString("code"));

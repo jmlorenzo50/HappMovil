@@ -41,7 +41,20 @@
             android:name=".ValoracionDiaActivity"
             android:label="@string/title_activity_valoracion_dia"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".EstudioActivity"></activity>
+        <activity android:name=".EstudioActivity" />
+        <activity
+            android:name=".VideoActivity"
+            android:label="@string/title_activity_video"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".VideoPreActivity"
+            android:label="@string/title_activity_video_pre"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".VideoPostActivity"
+            android:label="@string/title_activity_video_post"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

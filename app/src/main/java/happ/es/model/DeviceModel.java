@@ -23,7 +23,11 @@ public class DeviceModel {
 	/** The education level code */
 	private String educationLevelCode;
 
+	/** The group */
+	private String group;
 
+	/** The video view. */
+	private String videoView;
 
 
 	/**
@@ -128,5 +132,37 @@ public class DeviceModel {
 	 */
 	public void setEducationLevelCode(String educationLevelCode) {
 		this.educationLevelCode = educationLevelCode;
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public String getGroup() {
+		return group;
+	}
+
+	/**
+	 *
+	 * @param group
+	 */
+	public void setGroup(String group) {
+		this.group = group;
+	}
+
+	/**
+	 *
+	 * @return
+	 */
+	public String getVideoView() {
+		return videoView;
+	}
+
+	/**
+	 *
+	 * @param videoView
+	 */
+	public void setVideoView(String videoView) {
+		this.videoView = videoView;
 	}
 }

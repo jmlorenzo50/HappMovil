@@ -121,8 +121,12 @@ public class PanelControlActivity extends AppCompatActivity
 
 
     public void irValoracionDia(View view) {
+        /*
         Intent intent = new Intent(this, ValoracionDiaActivity.class);
         intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.MENU.name());
+        startActivity(intent);
+        */
+        Intent intent = new Intent(this, VideoPreActivity.class);
         startActivity(intent);
     }
 
