@@ -37,8 +37,11 @@ public class VideoPostActivity extends AppCompatActivity {
 
 
     public void continuar(View view) {
+        String videoAnswer = "";
+        long videoValue = 5;
+
         // Contestar pregunta y marcarla como vista
-        happService.changeShowVideo(id);
+        happService.changeShowVideo(id, videoAnswer, videoValue);
 
         // Ir a la actividad
         Intent intent = new Intent(this, ValoracionDiaActivity.class);
