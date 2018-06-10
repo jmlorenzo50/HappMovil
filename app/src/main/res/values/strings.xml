@@ -38,10 +38,10 @@
     <string name="actos_bondad_cita_05">2. Recuerda que la variedad es la clave, sorpréndenos añadiendo cualquier acto que se te ocurra.</string>
 
     <string name="valoracion_dia_cita_01">\"Everything is a present (todo es un regalo)\"</string>
-    <string name="valoracion_dia_cita_02">A continuación te vamos a proponer una actividad que sabemos que tendrá un efecto positivo en tu bienestar si la realizas todos los días.</string>
+    <string name="valoracion_dia_cita_02">A continuación te vamos a proponer una actividad que puede tener un efecto positivo en tu bienestar si la realizas todos los días.</string>
     <string name="valoracion_dia_cita_03">Esta actividad tendrá una duración de 7 días, una semana completa, sólo 7 días, pero es importante que no te saltes ninguno.Si esto sucediera,no te preocupes sigue al día siguiente, pero recuerda que para que sea efectivo tienes que ser consistente.</string>
-    <string name="valoracion_dia_cita_04">1.Márcate una hora aproximada para acceder a la aplicación. Procura que sea un momento en el que estés tranquilo y puedas dedicar al menos 5 minutos.</string>
-    <string name="valoracion_dia_cita_05">2.Todos los días te llegará un recordatorio. Es fácil y divertido: sigue las instrucciones y recuerda que la variedad es la clave.</string>
+    <string name="valoracion_dia_cita_04">1.Te avisaremos cada día para  acceder a la aplicación en el momento que tu nos digas. Procura que sea un momento en el que estés tranquilo y puedas dedicar al menos 5 minutos.</string>
+    <string name="valoracion_dia_cita_05">2.Todos los días te llegará un recordatorio. Tendrás que escribir sobre cosas por las que estés agradecido en el día que realices la actividad.Recuerda que la variedad es la clave. Por ejemplo: -"Hoy estaba lloviendo y una compañera se a acercado corriendo con su paraguas para que no me mojara.Es maravilloso tener compañeros así"-.</string>
     <string name="valoracion_dia_hoy">Hoy</string>
     <string name="valoracion_dia_ayer">Ayer</string>
     <string name="valoracion_dia_sin_datos">Todavía no has escrito tu valoración del día</string>
