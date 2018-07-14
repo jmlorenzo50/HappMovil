@@ -7,15 +7,14 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.widget.MediaController;
 import android.widget.VideoView;
 
 import happ.es.model.DeviceModel;
 import happ.es.model.ResponseModel;
 import happ.es.services.HappService;
-import happ.es.types.NavValoracionDia;
 import happ.es.types.TypeGroup;
-import happ.es.util.ConstantesValoracionDia;
+
 
 public class VideoActivity extends AppCompatActivity {
 
@@ -50,7 +49,8 @@ public class VideoActivity extends AppCompatActivity {
             } else if (TypeGroup.B.name().equals(deviceModel.getGroup())) {
                 myVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.videob));
             }
-            //myVideoView.setMediaController(new MediaController(this));
+            //comentar esto para no ver el control
+            myVideoView.setMediaController(new MediaController(this));
 
             myVideoView.setOnCompletionListener(
                     new MediaPlayer.OnCompletionListener() {

@@ -3,12 +3,9 @@ package happ.es.happ;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.VideoView;
 
 import happ.es.model.DeviceModel;
 import happ.es.model.ResponseModel;
@@ -66,8 +63,14 @@ public class VideoPreActivity extends AppCompatActivity {
 
 
     public void continuar(View view) {
+
+
+
         this.finish();
+
         //Intent intent = new Intent(this, VideoPostActivity.class);
+
+
         Intent intent = new Intent(this, VideoActivity.class);
         startActivity(intent);
     }

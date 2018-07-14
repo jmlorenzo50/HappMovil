@@ -10,12 +10,99 @@
 
     <LinearLayout
         android:id="@+id/preguntas"
+        android:paddingTop="0dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffffff"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <!-- Textos -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="200dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/preguntaGrupoA"
+            android:id="@+id/preguntaGrupoA"
+            android:paddingLeft="10dp"
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+            android:textSize="18dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/preguntaGrupoB"
+            android:id="@+id/preguntaGrupoB"
+            android:textAlignment="viewStart"
+            android:paddingLeft="10dp"
+            android:textColor="#696969"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/respuestaGrupos"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Respuesta"
+            android:gravity="center"
+            android:layout_marginLeft="60dp"
+            android:inputType="textCapCharacters"
+            android:maxLength="10"
+            android:textSize="25dp"
+            android:textColor="@color/colorTitulo"
+            android:textColorHint="@color/colorTitulo"
+            />
 
 
+        <!-- Barra de cuanto te ha gustado el video-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif"
+            android:textSize="18dp"
+            android:text="@string/cuantoGusto"
+            android:textAlignment="viewStart"
+            android:textColor="#696969"
+              />
+
+
+        <SeekBar
+            android:id="@+id/valoracionVideo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:min="1"
+            android:progress="5"
+            android:max="10"
+            android:progressDrawable="@drawable/seekbar"
+            android:thumb="@drawable/seekbar_drawable_thumb"
+            android:splitTrack="false"
+            android:padding="30dp"/>
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/bubbleSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:bsb_auto_adjust_section_mark="true"
+            app:bsb_bubble_color="@color/colorPrimary"
+            app:bsb_bubble_text_color="@color/colorAccent"
+            app:bsb_max="10"
+            app:bsb_min="0"
+            app:bsb_progress="0"
+            app:bsb_second_track_color="@color/blanco"
+            app:bsb_section_count="10"
+            app:bsb_section_text_position="below_section_mark"
+            app:bsb_show_progress_in_float="false"
+            app:bsb_show_section_mark="true"
+            app:bsb_show_section_text="true"
+            app:bsb_show_thumb_text="false"
+            app:bsb_track_color="@color/instrucciones_color" />
         <!-- Continuar -->
         <TextView
             android:layout_width="wrap_content"
@@ -30,8 +117,6 @@
             android:gravity="center"
             android:background="@drawable/boton_largo_valoracion_dia"
             android:onClick="continuar"  />
-
-
      </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

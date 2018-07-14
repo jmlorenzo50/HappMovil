@@ -79,6 +79,11 @@
 
     <string name="video_instrucciones_01">A continuación vas a ver un video que dura sólo cinco minutos.</string>
     <string name="video_instrucciones_02">Es importante que estés atento/a porque al finalizar te vamos a hacer una pregunta sobre el mismo. Si no puedes ver el video ahora, accede a la aplicación cuando puedas hacerlo.</string>
+    <string name="preguntaGrupoA">¿Con qué familiar estuvo Alice Sommer en el campo de concentración?.\n\n Estuvo con su....</string>
+    <string name="preguntaGrupoB">¿Cúal es la palabra clave?.\n \nLa palabra clave es...\n </string>
+    <string name="cuantoGusto">Puntua de 0 a 10 cúanto te ha gustado el video siendo 0 nada en absoluto y 10 lo máximo</string>
+
+
 
 
 </resources>
