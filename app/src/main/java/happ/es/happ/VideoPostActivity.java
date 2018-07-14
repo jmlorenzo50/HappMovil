@@ -66,7 +66,7 @@ public class VideoPostActivity extends AppCompatActivity {
 
 
     public void continuar(View view) {
-        String NOportunidad= "Primera";
+
 
         //respuesta
         EditText myRespuestaVideo = (EditText)findViewById(R.id.respuestaGrupos);

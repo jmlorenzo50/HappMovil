@@ -3,14 +3,13 @@ package happ.es.happ;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,13 +21,14 @@ import android.widget.TextView;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Calendar;
 
 import happ.es.model.ResponseModel;
 import happ.es.model.ValorationsLastWeekModel;
 import happ.es.services.HappService;
 import happ.es.types.NavValoracionDia;
 import happ.es.types.ParamIntent;
-import happ.es.util.AcercaDe;
 import happ.es.util.ConstantesValoracionDia;
 import happ.es.util.DateUtil;
 
@@ -289,6 +289,12 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
         // DIA 2
         now = dateUtil.dayAddDay(now, -1);
+        TextView textDiaTres;
+        textDiaTres = (TextView) findViewById(R.id.diaTres);
+        String date = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaTres.setText(date);
+
+
         response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY2, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
@@ -309,6 +315,11 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
         // DIA 3
         now = dateUtil.dayAddDay(now, -1);
+
+        TextView textDiaCuatro;
+        textDiaCuatro = (TextView) findViewById(R.id.diaCuatro);
+        String date2 = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaCuatro.setText(date2);
         response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY3, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
@@ -330,6 +341,10 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
         // DIA 4
         now = dateUtil.dayAddDay(now, -1);
+        TextView textDiaCinco;
+        textDiaCinco = (TextView) findViewById(R.id.diaCinco);
+        String date5 = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaCinco.setText(date5);
         response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY4, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
@@ -348,6 +363,11 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
         // DIA 5
         now = dateUtil.dayAddDay(now, -1);
+
+        TextView textDiaSeis;
+        textDiaSeis = (TextView) findViewById(R.id.diaSeis);
+        String date6 = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaSeis.setText(date6);
         response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY5, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
@@ -366,6 +386,10 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
         // DIA 6
         now = dateUtil.dayAddDay(now, -1);
+        TextView textDiaSiete;
+        textDiaSiete = (TextView) findViewById(R.id.diaSiete);
+        String date7 = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaSiete.setText(date7);
         response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY6, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
