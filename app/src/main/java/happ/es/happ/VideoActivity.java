@@ -19,6 +19,12 @@ import happ.es.util.ConstantesValoracionDia;
 
 public class VideoActivity extends AppCompatActivity {
 
+    private HappService happService;
+
+    private String id;
+
+    private DeviceModel deviceModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,21 +36,37 @@ public class VideoActivity extends AppCompatActivity {
 
         VideoView myVideoView = (VideoView)findViewById(R.id.myvideoA);
         //myVideoView.setVideoURI(Uri.parse(SrcPath));
-        myVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() +"/"+R.raw.videoa));
-        //myVideoView.setMediaController(new MediaController(this));
 
-        myVideoView.setOnCompletionListener(
-                new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mediaPlayer) {
-                    continuar();
+        // SERVICIO
+        happService = new HappService();
+        id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        // Solo el grupo A y B tienen video
+        ResponseModel device = happService.conectar(id);
+        if (device != null && device.getDeviceModel() != null) {
+            deviceModel = device.getDeviceModel();
+
+            if (TypeGroup.A.name().equals(deviceModel.getGroup())) {
+                myVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.videoa));
+            } else if (TypeGroup.B.name().equals(deviceModel.getGroup())) {
+                myVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.videob));
+            }
+            //myVideoView.setMediaController(new MediaController(this));
+
+            myVideoView.setOnCompletionListener(
+                    new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                        continuar();
+                        }
                     }
-                }
-        );
+            );
 
 
-        myVideoView.requestFocus();
-        myVideoView.start();
+            myVideoView.requestFocus();
+            myVideoView.start();
+
+
+        }
 
     }
 
