@@ -2,12 +2,6 @@ package happ.es.services;
 
 import android.util.Base64;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -58,6 +52,16 @@ public class HappService extends HappServiceComun {
         }
         return model;
     }
+    //MGL
+    public ResponseModel numeroCuestionario(String id) {
+        ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+        if (model.getTypeResponse() != TypeResponse.ERROR) {
+            String peticion = URL_BASE + "/questionary/session/numeroCuestionario?id=" + id;
+            String response = hacerPeticion(peticion);
+            model = new HappResponseWrapper().toModel(response);
+        }
+        return model;
+    }
 
     public ResponseModel getAllQuestionary(String id) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
@@ -72,6 +76,8 @@ public class HappService extends HappServiceComun {
 
     public ResponseModel sendQuestinary(String id, Long sessionId, QuestionaryModel questionaryModel) {
         ResponseModel model = new HappResponseWrapper().toModel(this.search(id));
+
+
         if (model.getTypeResponse() != TypeResponse.ERROR) {
             List<QuestionModel> questions = questionaryModel.getQuestions();
             for (QuestionModel q: questions) {

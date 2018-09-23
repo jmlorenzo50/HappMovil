@@ -5,10 +5,7 @@ import org.json.JSONObject;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import happ.es.model.AnswerModel;
 import happ.es.model.DeviceModel;
@@ -37,6 +34,12 @@ public class HappResponseWrapper {
             JSONObject reader = new JSONObject(datajson);
             model.setTypeResponse(TypeResponse.valueOf(reader.getString("typeResponse")));
             model.setError(reader.getString("error"));
+            try {
+                int valor = reader.getInt("numeroCuestionario");
+                model.setNumeroCuestionario(valor);
+            } catch (Exception e) {
+
+            }
 
             // Lectura de los datos del dispositivo
             DeviceModel device = new DeviceModel();

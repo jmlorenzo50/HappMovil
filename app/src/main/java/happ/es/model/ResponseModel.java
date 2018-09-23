@@ -30,6 +30,8 @@ public class ResponseModel {
     /** The valorations of last week */
     private List<ValorationModel> valorations;
 
+    private Integer numeroCuestionario;
+
 
 
     /**
@@ -149,4 +151,13 @@ public class ResponseModel {
     public void setValorations(List<ValorationModel> valorations) {
         this.valorations = valorations;
     }
+
+    public Integer getNumeroCuestionario() {
+        return numeroCuestionario;
+    }
+
+    public void setNumeroCuestionario(Integer numeroCuestionario) {
+        this.numeroCuestionario = numeroCuestionario;
+    }
+
 }

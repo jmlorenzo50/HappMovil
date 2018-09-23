@@ -1,6 +1,5 @@
 package happ.es.components.questionary;
 
-import android.content.DialogInterface;
 import android.view.View;
 import android.widget.TextView;
 
@@ -38,12 +37,11 @@ public class QuestionaryOnClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        for (int i=0; i<btnAnswers.size(); i++) {
-            btnAnswers.get(i).setBackgroundResource(R.drawable.boton_largo_verde2);
-        }
+      /** for (int i=0; i<btnAnswers.size(); i++) {
+            btnAnswers.get(i).setBackgroundResource(R.drawable.boton_largo2_amarillo);
+        }**/
         btnAnswers.get(activar).setBackgroundResource(R.drawable.boton_largo_verde2);
         question.setAnswerSelected(answer);
-
         questionaryActivity.siguiente();
     }
 }

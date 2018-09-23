@@ -1,27 +1,14 @@
 package happ.es.happ;
 
-import android.content.Context;
+import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.os.Bundle;
-import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import happ.es.components.questionary.HappViewPager;
 import happ.es.components.questionary.SectionsPagerAdapter;
@@ -116,10 +103,28 @@ public class QuestionaryActivity extends AppCompatActivity {
         // Si es la última pregunta
         boolean lastItem = viewPager.nextPage();
         if (lastItem) {
+
+
+//NO FUNCIONA EL YA QUE RECOGE EL ID DEL CUESTIONARIO ANTES DE TERMINAR EL SEND Y SE REPITEN LOS CUESTIONARIOS DOS VECES
+
+           // int numeroCuestionario = SessionsForAnswerUtil.numeroCuestionario(id, happService);
+           // if (numeroCuestionario != 8) {
+             //   Thread thread =  new Thread (new Runnable() {
+           //     public void run() {
+            Toast toast = new Toast(this);
+            ImageView view = new ImageView(this);
+            view.setImageResource(R.drawable.reloj);
+            toast.setView(view);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            //    }});
+              //  thread.start();
             happService.sendQuestinary(id, sessionId, questionaryModel);
-            SessionsForAnswerUtil.test(id, happService, this);
+                    SessionsForAnswerUtil.test(id, happService, this);
+       // }else {
+             ////   happService.sendQuestinary(id, sessionId, questionaryModel);
+             //   SessionsForAnswerUtil.test(id, happService, this);}
+
         }
     }
-
-
 }

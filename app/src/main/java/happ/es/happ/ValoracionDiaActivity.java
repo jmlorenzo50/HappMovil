@@ -21,8 +21,6 @@ import android.widget.TextView;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.Calendar;
 
 import happ.es.model.ResponseModel;
 import happ.es.model.ValorationsLastWeekModel;
@@ -49,6 +47,20 @@ public class ValoracionDiaActivity extends AppCompatActivity
     private LinearLayout day4Nodatafound, day4Datafound;
     private LinearLayout day5Nodatafound, day5Datafound;
     private LinearLayout day6Nodatafound, day6Datafound;
+    private LinearLayout imageVal1;
+    private LinearLayout imageVal2;
+    private LinearLayout imageVal3;
+    private LinearLayout imageVal4;
+    private LinearLayout imageVal5;
+    private LinearLayout imageVal6;
+    private LinearLayout imageVal7;
+    private LinearLayout linea1;
+    private LinearLayout linea2;
+    private LinearLayout linea3;
+    private LinearLayout linea4;
+    private LinearLayout linea5;
+    private LinearLayout linea6;
+    private LinearLayout linea7;
 
     private String id;
 
@@ -91,6 +103,23 @@ public class ValoracionDiaActivity extends AppCompatActivity
         day5Datafound = (LinearLayout) findViewById(R.id.day5Datafound);
         day6Nodatafound = (LinearLayout) findViewById(R.id.day6Nodatafound);
         day6Datafound = (LinearLayout) findViewById(R.id.day6Datafound);
+
+        imageVal1= (LinearLayout) findViewById(R.id.imageVal1);
+        imageVal2= (LinearLayout) findViewById(R.id.imageVal2);
+        imageVal3= (LinearLayout) findViewById(R.id.imageVal3);
+        imageVal4= (LinearLayout) findViewById(R.id.imageVal4);
+        imageVal5= (LinearLayout) findViewById(R.id.imageVal5);
+        imageVal6= (LinearLayout) findViewById(R.id.imageVal6);
+        imageVal7= (LinearLayout) findViewById(R.id.imageVal7);
+
+        linea1= (LinearLayout) findViewById(R.id.linea1);
+        linea2= (LinearLayout) findViewById(R.id.linea2);
+        linea3= (LinearLayout) findViewById(R.id.linea3);
+        linea4= (LinearLayout) findViewById(R.id.linea4);
+        linea5= (LinearLayout) findViewById(R.id.linea5);
+        linea6= (LinearLayout) findViewById(R.id.linea6);
+        linea7= (LinearLayout) findViewById(R.id.linea7);
+
 
         // NAVEGACION
         Intent intent = getIntent();
@@ -173,8 +202,6 @@ public class ValoracionDiaActivity extends AppCompatActivity
     }
 
 
-
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -244,11 +271,20 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
 
     private void prepararListaValoraicones() {
-        DateUtil dateUtil = new DateUtil();
-        Timestamp now = dateUtil.now();
-        valorationsLastWeekModel = new ValorationsLastWeekModel(dateUtil.now());
+        boolean[] visibles = new boolean[7];
 
         // DIA 0
+        DateUtil dateUtil = new DateUtil();
+        Timestamp now = dateUtil.now();
+
+        TextView textDiaUno;
+        textDiaUno = (TextView) findViewById(R.id.diaUno);
+        String text="HOY: ";
+        String date0 = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaUno.setText(text+date0);
+
+
+        valorationsLastWeekModel = new ValorationsLastWeekModel(dateUtil.now());
         ResponseModel response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY0, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
@@ -261,14 +297,23 @@ public class ValoracionDiaActivity extends AppCompatActivity
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto3), 3);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto4), 4);
 
-
+            visibles[0] = true;
         } else {
             day0Nodatafound.setVisibility(View.VISIBLE);
             day0Datafound.setVisibility(View.GONE);
+
+            visibles[0] = false;
         }
 
         // DIA 1
         now = dateUtil.dayAddDay(now, -1);
+
+
+        TextView textDiaDos;
+        textDiaDos = (TextView) findViewById(R.id.diaDos);
+        String date2 = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaDos.setText(date2);
+
         response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY1, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
@@ -280,19 +325,19 @@ public class ValoracionDiaActivity extends AppCompatActivity
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day1Texto2), 2);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day1Texto3), 3);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day1Texto4), 4);
-
-
+            visibles[1] = true;
         } else {
+
             day1Nodatafound.setVisibility(View.VISIBLE);
             day1Datafound.setVisibility(View.GONE);
+            visibles[1] = false;
         }
-
         // DIA 2
         now = dateUtil.dayAddDay(now, -1);
         TextView textDiaTres;
         textDiaTres = (TextView) findViewById(R.id.diaTres);
-        String date = DateFormat.format("dd-MM-yyyy", now).toString();
-        textDiaTres.setText(date);
+        String date3 = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaTres.setText(date3);
 
 
         response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
@@ -306,11 +351,12 @@ public class ValoracionDiaActivity extends AppCompatActivity
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day2Texto2), 2);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day2Texto3), 3);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day2Texto4), 4);
-
+            visibles[2] = true;
 
         } else {
             day2Nodatafound.setVisibility(View.VISIBLE);
             day2Datafound.setVisibility(View.GONE);
+            visibles[2] = false;
         }
 
         // DIA 3
@@ -318,8 +364,8 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
         TextView textDiaCuatro;
         textDiaCuatro = (TextView) findViewById(R.id.diaCuatro);
-        String date2 = DateFormat.format("dd-MM-yyyy", now).toString();
-        textDiaCuatro.setText(date2);
+        String date4 = DateFormat.format("dd-MM-yyyy", now).toString();
+        textDiaCuatro.setText(date4);
         response = happService.getListValorationsLastWeek(id, dateUtil.getDay(now), dateUtil.getMonth(now) , dateUtil.getYear(now));
         valorationsLastWeekModel.put(ValorationsLastWeekModel.DAY3, response.getValorations());
         if (response.getValorations() != null && response.getValorations().size() > 0) {
@@ -331,11 +377,12 @@ public class ValoracionDiaActivity extends AppCompatActivity
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day3Texto2), 2);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day3Texto3), 3);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day3Texto4), 4);
-
+            visibles[3] = true;
 
         } else {
             day3Nodatafound.setVisibility(View.VISIBLE);
             day3Datafound.setVisibility(View.GONE);
+            visibles[3] = false;
         }
 
 
@@ -356,9 +403,11 @@ public class ValoracionDiaActivity extends AppCompatActivity
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day4Texto2), 2);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day4Texto3), 3);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day4Texto4), 4);
+            visibles[4] = true;
         } else {
             day4Nodatafound.setVisibility(View.VISIBLE);
             day4Datafound.setVisibility(View.GONE);
+            visibles[4] = false;
         }
 
         // DIA 5
@@ -379,9 +428,11 @@ public class ValoracionDiaActivity extends AppCompatActivity
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day5Texto2), 2);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day5Texto3), 3);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day5Texto4), 4);
+            visibles[5] = true;
         } else {
             day5Nodatafound.setVisibility(View.VISIBLE);
             day5Datafound.setVisibility(View.GONE);
+            visibles[5] = false;
         }
 
         // DIA 6
@@ -401,9 +452,55 @@ public class ValoracionDiaActivity extends AppCompatActivity
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day6Texto2), 2);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day6Texto3), 3);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day6Texto4), 4);
+            visibles[6] = true;
         } else {
             day6Nodatafound.setVisibility(View.VISIBLE);
             day6Datafound.setVisibility(View.GONE);
+            visibles[6] = false;
+        }
+
+
+        // DESACTIVACIÓN NO VISIBLES
+
+
+        boolean conDato = false;
+
+
+        for (int vv = visibles.length - 1; vv >= 0; vv--) {
+            if (!conDato && !visibles[vv]) {
+                // OCULTAS
+                if (vv==1) {
+                    day1Nodatafound.setVisibility(View.GONE);
+                    imageVal2.setVisibility(View.GONE);
+                    linea2.setVisibility(View.GONE);
+                }else if (vv==2) {
+                    day2Nodatafound.setVisibility(View.GONE);
+                    imageVal3.setVisibility(View.GONE);
+                    linea3.setVisibility(View.GONE);
+                }else if (vv==3) {
+                    day3Nodatafound.setVisibility(View.GONE);
+                    imageVal4.setVisibility(View.GONE);
+                    linea4.setVisibility(View.GONE);
+                }else if (vv==4) {
+                    day4Nodatafound.setVisibility(View.GONE);
+                    imageVal5.setVisibility(View.GONE);
+                    linea5.setVisibility(View.GONE);
+                }else if (vv==5) {
+                    day5Nodatafound.setVisibility(View.GONE);
+                    imageVal6.setVisibility(View.GONE);
+                    linea6.setVisibility(View.GONE);
+                }else if (vv==6) {
+                    day6Nodatafound.setVisibility(View.GONE);
+                    imageVal7.setVisibility(View.GONE);
+                    linea7.setVisibility(View.GONE);
+                }
+
+
+
+
+            } else {
+                conDato = true;
+            }
         }
 
     }

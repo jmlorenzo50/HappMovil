@@ -16,8 +16,11 @@ import happ.es.types.MaritalStatus;
 
 public class HappServiceComun {
 
-    //protected static final String URL_BASE = "http://192.168.1.41:8080";
-    protected static final String URL_BASE = "http://139.99.44.79:8080/happ";
+
+ protected static final String URL_BASE = "http://192.168.1.40:8080";
+  //   protected static final String URL_BASE = "http://139.99.44.79:8080/happ";
+
+
 
 
     protected String search (String id) {

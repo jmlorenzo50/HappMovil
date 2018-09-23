@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#ffffff"
+                android:id="@+id/imageVal1"
                 >
 
                 <ImageView
@@ -52,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-smallcaps"
-                    android:text="@string/valoracion_dia_hoy"
+                    android:id="@+id/diaUno"
                     android:textAlignment="center"
                     android:textColor="#696969"
                     android:textSize="12dp"
@@ -64,6 +65,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:background="@color/colorValoracionDia"
+                android:id="@+id/linea1"
                 android:orientation="horizontal"
                 android:paddingBottom="10dp"
                 />
@@ -89,6 +91,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/imageVal2"
                 android:orientation="horizontal"
                 android:background="#ffffff"
                 >
@@ -105,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-smallcaps"
-                    android:text="@string/valoracion_dia_ayer"
+                    android:id="@+id/diaDos"
                     android:textAlignment="center"
                     android:textColor="#696969"
                     android:textSize="12dp"
@@ -118,6 +121,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:background="@color/colorValoracionDia"
+                android:id="@+id/linea2"
                 android:orientation="horizontal"
                 android:paddingBottom="10dp"
                 />
@@ -143,6 +147,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="#ffffff"
+                android:id="@+id/imageVal3"
                 >
 
                 <ImageView
@@ -158,7 +163,6 @@
                     android:layout_margin="10dp"
                     android:fontFamily="sans-serif-smallcaps"
                     android:id="@+id/diaTres"
-                    android:text="29/10"
                     android:textAlignment="center"
                     android:textColor="#696969"
                     android:textSize="12dp"
@@ -171,6 +175,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="1dp"
                 android:background="@color/colorValoracionDia"
+                android:id="@+id/linea3"
                 android:orientation="horizontal"
                 android:paddingBottom="10dp"
                 />
@@ -191,11 +196,11 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- Hace 3 dias -->
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"  android:id="@+id/imageVal4" android:orientation="horizontal" android:background="@color/blanco" >
                 <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
-                <TextView android:text="28/10"  android:id="@+id/diaCuatro" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
+                <TextView  android:id="@+id/diaCuatro" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
             </LinearLayout>
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/linea4"     android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
 
             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day3Nodatafound">
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
@@ -213,11 +218,15 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- Hace 4 dias -->
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
-                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
-                <TextView android:id="@+id/diaCinco" android:text="27/10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:id="@+id/imageVal5"
+                          android:background="@color/blanco" >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"    app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
+                <TextView android:id="@+id/diaCinco" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
             </LinearLayout>
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/linea5"     android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
 
             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day4Nodatafound">
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
@@ -234,11 +243,11 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- Hace 5 dias -->
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
-                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
-                <TextView android:id="@+id/diaSeis" android:text="26/10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
+            <LinearLayout android:layout_width="match_parent" android:id="@+id/imageVal6" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia"    android:layout_margin="10dp" />
+                <TextView android:id="@+id/diaSeis" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
             </LinearLayout>
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/linea6"     android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
 
             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day5Nodatafound">
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
@@ -256,11 +265,11 @@
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <!-- Hace 6 dias -->
             <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/blanco" >
-                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
-                <TextView android:id="@+id/diaSiete" android:text="25/10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"  android:id="@+id/imageVal7" android:orientation="horizontal" android:background="@color/blanco" >
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"   app:srcCompat="@drawable/icono_valoracion_dia" android:layout_margin="10dp" />
+                <TextView android:id="@+id/diaSiete"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif-smallcaps" android:textAlignment="center" android:textColor="#696969" android:textSize="12dp" android:textStyle="bold" />
             </LinearLayout>
-            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp" android:id="@+id/linea7"    android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
 
             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day6Nodatafound">
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/valoracion_dia_sin_datos" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
