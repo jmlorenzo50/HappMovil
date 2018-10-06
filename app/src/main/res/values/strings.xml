@@ -49,7 +49,8 @@
 
     <string name="instrucciones">Instrucciones</string>
     <string name="empezar_ahora">EMPEZAR AHORA</string>
-    <string name="realizar_ahora">ESCRIBIR</string>
+    <string name="realizar_ahora">EMPEZAR ACTIVIDAD</string>
+    <string name="guardar">GUARDAR</string>
     <string name="no_mostrar_texto">No volver a mostrar este texto</string>
     <string name="eduardo_galeano">Alice Sommer</string>
 

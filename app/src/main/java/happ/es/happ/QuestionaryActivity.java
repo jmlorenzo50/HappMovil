@@ -9,9 +9,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import happ.es.components.questionary.HappViewPager;
 import happ.es.components.questionary.SectionsPagerAdapter;
+import happ.es.hilo.RelojMns;
 import happ.es.model.QuestionaryModel;
 import happ.es.model.ResponseModel;
 import happ.es.services.HappService;
@@ -107,24 +107,22 @@ public class QuestionaryActivity extends AppCompatActivity {
 
 //NO FUNCIONA EL YA QUE RECOGE EL ID DEL CUESTIONARIO ANTES DE TERMINAR EL SEND Y SE REPITEN LOS CUESTIONARIOS DOS VECES
 
-           // int numeroCuestionario = SessionsForAnswerUtil.numeroCuestionario(id, happService);
-           // if (numeroCuestionario != 8) {
-             //   Thread thread =  new Thread (new Runnable() {
-           //     public void run() {
+            // int numeroCuestionario = SessionsForAnswerUtil.numeroCuestionario(id, happService);
+            //  if (numeroCuestionario != 8) {
             Toast toast = new Toast(this);
             ImageView view = new ImageView(this);
             view.setImageResource(R.drawable.reloj);
             toast.setView(view);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.show();
-            //    }});
-              //  thread.start();
+            toast.setDuration(Toast.LENGTH_LONG);
+
             happService.sendQuestinary(id, sessionId, questionaryModel);
-                    SessionsForAnswerUtil.test(id, happService, this);
-       // }else {
-             ////   happService.sendQuestinary(id, sessionId, questionaryModel);
-             //   SessionsForAnswerUtil.test(id, happService, this);}
+            toast.show();
+            SessionsForAnswerUtil.test(id, happService, this);
+
+
+
 
         }
     }
+
 }
