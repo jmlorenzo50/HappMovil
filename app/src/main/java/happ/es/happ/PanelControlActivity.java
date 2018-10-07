@@ -3,10 +3,9 @@ package happ.es.happ;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,10 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
-import happ.es.types.NavValoracionDia;
+import happ.es.hilo.RelojMns;
 import happ.es.types.ParamIntent;
-import happ.es.util.ConstantesValoracionDia;
+
+import static happ.es.happ.R.drawable.reloj;
 
 public class PanelControlActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -126,6 +128,9 @@ public class PanelControlActivity extends AppCompatActivity
         intent.putExtra(ConstantesValoracionDia.NAVEGACION, NavValoracionDia.MENU.name());
         startActivity(intent);
         */
+
+        Runnable reloj=new RelojMns (this);
+        reloj.run();
         Intent intent = new Intent(this, VideoPreActivity.class);
         startActivity(intent);
     }

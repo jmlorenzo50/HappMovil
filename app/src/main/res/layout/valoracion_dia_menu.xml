@@ -282,11 +282,28 @@
                 <TextView android:id="@+id/day6Texto3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
                 <TextView android:id="@+id/day6Texto4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif" android:textAlignment="viewStart" android:textColor="#696969"  android:textSize="12dp" />
             </LinearLayout>
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!--MGL-BOTÓN SALIR -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="5dp" android:id="@+id/linea8"    android:background="@color/colorValoracionDia" android:orientation="horizontal" android:paddingBottom="10dp" />
+
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/day0Salir">
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:text="@string/fin_valoracion" android:textAlignment="viewStart"  android:textColor="#696969" android:textSize="12dp" />
+                <!-- Botón -->
+                <TextView android:text="@string/salir" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:fontFamily="sans-serif"  android:textAlignment="center" android:textColor="@color/blanco"  android:textSize="12dp" android:layout_gravity="center" android:gravity="center" android:background="@drawable/boton_largo_valoracion_dia" android:onClick="salirApp"/>
+            </LinearLayout>
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <!--MGL-FIN BOTÓN SALIR -->
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
 
 
         </LinearLayout>
 
-    </ScrollView>
+  </ScrollView>
 
 </LinearLayout>
 

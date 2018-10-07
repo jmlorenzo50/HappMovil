@@ -45,12 +45,13 @@
     <string name="valoracion_dia_hoy">Hoy</string>
     <string name="valoracion_dia_ayer">Ayer</string>
     <string name="valoracion_dia_sin_datos">No hay valoración en este día.</string>
-
+    <string name="fin_valoracion">Ya has realizado la actividad por hoy.Recuerda acceder mañana de nuevo a la aplicación.Gracias!</string>
 
     <string name="instrucciones">Instrucciones</string>
     <string name="empezar_ahora">EMPEZAR AHORA</string>
     <string name="realizar_ahora">EMPEZAR ACTIVIDAD</string>
     <string name="guardar">GUARDAR</string>
+    <string name="salir">SALIR</string>
     <string name="no_mostrar_texto">No volver a mostrar este texto</string>
     <string name="eduardo_galeano">Alice Sommer</string>
 

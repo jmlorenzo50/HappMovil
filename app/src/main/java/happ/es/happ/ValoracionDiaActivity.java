@@ -14,9 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -47,6 +49,8 @@ public class ValoracionDiaActivity extends AppCompatActivity
     private LinearLayout day4Nodatafound, day4Datafound;
     private LinearLayout day5Nodatafound, day5Datafound;
     private LinearLayout day6Nodatafound, day6Datafound;
+    private LinearLayout day0Salir;
+
     private LinearLayout imageVal1;
     private LinearLayout imageVal2;
     private LinearLayout imageVal3;
@@ -70,7 +74,9 @@ public class ValoracionDiaActivity extends AppCompatActivity
         setContentView(R.layout.activity_valoracion_dia);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+       //añadir aqui si ya ha valorado hoy poner un mensaje ya has hecho la actividad de hoy Salir
 
+        
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -103,6 +109,7 @@ public class ValoracionDiaActivity extends AppCompatActivity
         day5Datafound = (LinearLayout) findViewById(R.id.day5Datafound);
         day6Nodatafound = (LinearLayout) findViewById(R.id.day6Nodatafound);
         day6Datafound = (LinearLayout) findViewById(R.id.day6Datafound);
+        day0Salir = (LinearLayout) findViewById(R.id.day0Salir);
 
         imageVal1= (LinearLayout) findViewById(R.id.imageVal1);
         imageVal2= (LinearLayout) findViewById(R.id.imageVal2);
@@ -264,6 +271,13 @@ public class ValoracionDiaActivity extends AppCompatActivity
         intent.putExtra(ParamIntent.VALIDAR_EXISTEN_DATOS.name(), false);
         startActivity(intent);
     }
+    public void salirApp(View view) {
+    Intent intent = new Intent(this, MenuActivity.class);  // con este código vamos a la Activity principal
+    finish();
+    }
+
+
+
 
     public void mostrarAcercaDe(MenuItem item) {
         //AcercaDe.mostrarAcercaDe(this);
@@ -272,6 +286,7 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
     private void prepararListaValoraicones() {
         boolean[] visibles = new boolean[7];
+        day0Salir.setVisibility(View.GONE);
 
         // DIA 0
         DateUtil dateUtil = new DateUtil();
@@ -296,6 +311,11 @@ public class ValoracionDiaActivity extends AppCompatActivity
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto2), 2);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto3), 3);
             prepararValoracionPuntual(response, (TextView) findViewById(R.id.day0Texto4), 4);
+            //botón salir si ya has realizado la valoración de hoy
+
+            day0Salir.setVisibility(View.VISIBLE);
+
+
 
             visibles[0] = true;
         } else {
