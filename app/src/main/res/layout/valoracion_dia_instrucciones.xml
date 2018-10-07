@@ -5,7 +5,11 @@
     android:layout_height="wrap_content"
     android:background="#ffffff"
     tools:showIn="@layout/valoracion_dia_bar">
-
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scroll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 <LinearLayout
     android:id="@+id/instrucciones"
     android:layout_width="match_parent"
@@ -188,5 +192,5 @@
 
     </LinearLayout>
 </LinearLayout>
-
+    </ScrollView>
 </FrameLayout>
