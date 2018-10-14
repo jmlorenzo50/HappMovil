@@ -66,12 +66,14 @@ public class ValoracionDiaActivity extends AppCompatActivity
     private LinearLayout linea5;
     private LinearLayout linea6;
     private LinearLayout linea7;
+    private TextView instrucciones_con;
+    private TextView instrucciones_exp;
     private DeviceModel deviceModel;
     private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         // SERVICIO
         happService = new HappService();
         id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
@@ -84,25 +86,19 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
                 //titulo principal de la actividad (en amarillo arriba)
                 setTitle(R.string.title_activity_tareas_realizadas);
-
+             //   instrucciones_con.setVisibility(TextView.VISIBLE);
+              //  instrucciones_exp.setVisibility(TextView.INVISIBLE);
             } else {
 
                 //titulo principal de la actividad (en amarillo arriba)
                 setTitle(R.string.title_activity_valoracion_dia);
             }
-
         }
 
-
-
-
-
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_valoracion_dia);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-       //añadir aqui si ya ha valorado hoy poner un mensaje ya has hecho la actividad de hoy Salir
-
-        
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -175,7 +171,27 @@ public class ValoracionDiaActivity extends AppCompatActivity
         } else if (navegacion == NavValoracionDia.ESTADO_ANIMICO) {
             estado_animico.setVisibility(View.VISIBLE);
         } else if (navegacion == NavValoracionDia.INSTRUCCIONES) {
+
+            // SERVICIO
             instrucciones.setVisibility(View.VISIBLE);
+            ResponseModel device = happService.conectar(id);
+            instrucciones_con= (TextView) findViewById(R.id.instrucciones_con);
+            instrucciones_exp= (TextView) findViewById(R.id.instrucciones_exp);
+            //si es el grupo D cambio las instrucciones
+            if (device != null && device.getDeviceModel() != null) {
+                deviceModel = device.getDeviceModel();
+
+                if (TypeGroup.D.name().equals(deviceModel.getGroup()))  {
+                    instrucciones.setVisibility(View.VISIBLE);
+
+                      instrucciones_con.setVisibility(TextView.VISIBLE);
+                      instrucciones_exp.setVisibility(TextView.GONE);
+                }else {
+
+                }
+            }
+
+
         } else if (navegacion == NavValoracionDia.ALTA) {
             realizarValoracion.setVisibility(View.VISIBLE);
         }

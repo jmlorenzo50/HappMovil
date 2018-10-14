@@ -52,12 +52,7 @@
     <string name="valoracion_dia_control_02">A continuación te vamos a proponer una actividad que puede tener un efecto positivo en tu bienestar si la realizas todos los días.</string>
     <string name="valoracion_dia_control_03">Esta actividad tendrá una duración de 7 días, una semana completa, sólo 7 días, pero es importante que no te saltes ninguno. Si esto sucediera, no te preocupes sigue al día siguiente, pero recuerda que para que sea efectivo tienes que ser consistente.</string>
     <string name="valoracion_dia_control_04">1.Te avisaremos cada día para  acceder a la aplicación. Procura que sea un momento en el que estés tranquilo y puedas dedicar al menos 5 minutos.</string>
-    <string name="valoracion_dia_control_05">2.Todos los días te llegará un recordatorio. Se trata de una tarea que mejorará tus habilidades de organización.Se trata de realizar un esquema mental de las cinco tareas principales que realizaste el día anterior  y escribirlas en forma de lista.Por ejemplo "Terminé el trabajo de historia","Apunté a los niños a natación","Ordené la ropa" </string>
-
-
-    <string name="instrucciones_agradecimiento">"Hay muchas cosas en nuestra vida, ya sean grandes o pequeñas por las que estar agradecido. Piensa en los acontecimientos de este día y escribe en las líneas siguientes hasta cinco cosas que agradecer del día de hoy."</string>
-    <string name="instrucciones_control">"Hay muchas cosas en nuestra vida, ya sean grandes o pequeñas por las que estar agradecido. Piensa en los acontecimientos de este día y escribe en las líneas siguientes hasta cinco cosas que agradecer del día de hoy."</string>
-
+    <string name="valoracion_dia_control_05">2.Todos los días te llegará un recordatorio.Se trata de una tarea que mejorará tus habilidades de organización en el que pensarás y escribirás en formato lista sobre las cinco tareas principales que realizaste el día anterior.Por ejemplo -Terminé el trabajo de historia,-Apunté a los niños a natación,-Ordené la ropa </string>
 
 
     <string name="instrucciones">Instrucciones</string>

@@ -11,17 +11,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ffffff"
-    android:orientation="vertical"
-    >
-
-
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:fontFamily="sans-serif"
-        android:text="@+id/instrucciones_agradecimiento"
+        android:text="Hay muchas cosas en nuestra vida, ya sean grandes o pequeñas por las que estar agradecido. Piensa en los acontecimientos de este día y escribe en las líneas siguientes hasta cinco cosas que agradecer del día de hoy."
         android:textAlignment="viewStart"
         android:textColor="#696969"
         android:textSize="12dp"
