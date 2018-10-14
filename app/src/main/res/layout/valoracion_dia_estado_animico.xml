@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:fontFamily="sans-serif"
-        android:text="Antes de realizar la actividad de agradecimiento indicanos por favor de 0 a 10 como te sientes en este momento."
+        android:text="Antes de realizar la actividad indicanos por favor de 0 a 10 como te sientes en este momento."
         android:textAlignment="viewStart"
         android:textColor="#696969"
         android:textSize="12dp" />

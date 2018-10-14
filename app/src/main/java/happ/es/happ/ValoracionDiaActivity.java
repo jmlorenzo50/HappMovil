@@ -1,6 +1,7 @@
 package happ.es.happ;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.NavigationView;
@@ -14,21 +15,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import happ.es.model.DeviceModel;
 import happ.es.model.ResponseModel;
 import happ.es.model.ValorationsLastWeekModel;
 import happ.es.services.HappService;
 import happ.es.types.NavValoracionDia;
 import happ.es.types.ParamIntent;
+import happ.es.types.TypeGroup;
 import happ.es.util.ConstantesValoracionDia;
 import happ.es.util.DateUtil;
 
@@ -65,12 +66,37 @@ public class ValoracionDiaActivity extends AppCompatActivity
     private LinearLayout linea5;
     private LinearLayout linea6;
     private LinearLayout linea7;
-
+    private DeviceModel deviceModel;
     private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // SERVICIO
+        happService = new HappService();
+        id = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        // El grupo a,b y c pone agradecimiento en el titulo.El grupo D, tareas realizadas
+        ResponseModel device = happService.conectar(id);
+        if (device != null && device.getDeviceModel() != null) {
+            deviceModel = device.getDeviceModel();
+
+            if (TypeGroup.D.name().equals(deviceModel.getGroup()))  {
+
+                //titulo principal de la actividad (en amarillo arriba)
+                setTitle(R.string.title_activity_tareas_realizadas);
+
+            } else {
+
+                //titulo principal de la actividad (en amarillo arriba)
+                setTitle(R.string.title_activity_valoracion_dia);
+            }
+
+        }
+
+
+
+
+
         setContentView(R.layout.activity_valoracion_dia);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -85,6 +111,7 @@ public class ValoracionDiaActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
