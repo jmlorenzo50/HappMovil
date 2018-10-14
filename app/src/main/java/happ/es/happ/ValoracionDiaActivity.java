@@ -68,6 +68,10 @@ public class ValoracionDiaActivity extends AppCompatActivity
     private LinearLayout linea7;
     private TextView instrucciones_con;
     private TextView instrucciones_exp;
+    private TextView instruccion_ppal_exp;
+    private TextView instruccion_ppal_con;
+    private TextView boton_empezar;
+
     private DeviceModel deviceModel;
     private String id;
 
@@ -177,6 +181,9 @@ public class ValoracionDiaActivity extends AppCompatActivity
             ResponseModel device = happService.conectar(id);
             instrucciones_con= (TextView) findViewById(R.id.instrucciones_con);
             instrucciones_exp= (TextView) findViewById(R.id.instrucciones_exp);
+            //que se vea el botón empezar
+            boton_empezar= (TextView) findViewById(R.id.boton_empezar);
+            boton_empezar.setVisibility(TextView.VISIBLE);
             //si es el grupo D cambio las instrucciones
             if (device != null && device.getDeviceModel() != null) {
                 deviceModel = device.getDeviceModel();
@@ -187,13 +194,39 @@ public class ValoracionDiaActivity extends AppCompatActivity
                       instrucciones_con.setVisibility(TextView.VISIBLE);
                       instrucciones_exp.setVisibility(TextView.GONE);
                 }else {
-
+                    instrucciones_exp.setVisibility(TextView.VISIBLE);
                 }
             }
 
 
         } else if (navegacion == NavValoracionDia.ALTA) {
             realizarValoracion.setVisibility(View.VISIBLE);
+
+            // SERVICIO
+            instrucciones.setVisibility(View.VISIBLE);
+            ResponseModel device = happService.conectar(id);
+            instruccion_ppal_exp= (TextView) findViewById(R.id.instruccion_ppal_exp);
+            instruccion_ppal_con= (TextView) findViewById(R.id.instruccion_ppal_con);
+            //si es el grupo D cambio las instrucciones
+            if (device != null && device.getDeviceModel() != null) {
+                deviceModel = device.getDeviceModel();
+
+                if (TypeGroup.D.name().equals(deviceModel.getGroup()))  {
+                    instrucciones.setVisibility(View.VISIBLE);
+
+                    instruccion_ppal_con.setVisibility(TextView.VISIBLE);
+                    instruccion_ppal_exp.setVisibility(TextView.GONE);
+                }else {
+                    instruccion_ppal_con.setVisibility(TextView.GONE);
+                    instruccion_ppal_exp.setVisibility(TextView.VISIBLE);
+                }
+            }
+
+
+
+
+
+
         }
     }
 
